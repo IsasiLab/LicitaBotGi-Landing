@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isasilab.github.io/LicitaBotGi-Landing/sitemap.xml
