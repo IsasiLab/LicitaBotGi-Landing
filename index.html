@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LicitaBotGi - Sistema Inteligente de Gestión de Licitaciones</title>
+    <meta name="description" content="Software profesional para automatizar el análisis de licitaciones con IA local. Extracción automática, análisis inteligente y generación de propuestas.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: -30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .pricing {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan {
+            background: white;
+            color: #333;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .plan:hover {
+            transform: translateY(-10px);
+        }
+        
+        .plan h3 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #764ba2;
+            margin: 20px 0;
+        }
+        
+        .plan ul {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+        
+        .plan li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .plan li:before {
+            content: "✓ ";
+            color: #059669;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #059669;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+        }
+        
+        .cta-button:hover {
+            background: #047857;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.6);
+        }
+        
+        .tech-stack {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .tech-stack h2 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .badge {
+            background: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .contact {
+            text-align: center;
+            padding: 50px 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        .contact h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .faq {
+            margin: 50px 0;
+        }
+        
+        .faq h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .faq-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .pricing {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🚀 LicitaBotGi</h1>
+            <p class="tagline">Sistema Inteligente de Gestión de Licitaciones con IA</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-content">
+            <h2 style="text-align: center; color: #667eea; font-size: 2.2em; margin-bottom: 20px;">
+                Automatiza el análisis de licitaciones en minutos
+            </h2>
+            <p style="text-align: center; font-size: 1.2em; color: #666; margin-bottom: 50px;">
+                Software profesional para empresas españolas que participan en contratación pública
+            </p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🤖 Análisis con IA</h3>
+                    <p>Extracción automática de CPVs, presupuestos, requisitos técnicos y criterios de adjudicación desde PDFs.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📝 Generación Automática</h3>
+                    <p>Crea propuestas profesionales en Word basadas en el análisis inteligente del pliego.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🔒 100% Privado</h3>
+                    <p>IA local con Ollama. Tus datos nunca salen de tu ordenador. Sin APIs externas ni suscripciones.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>💰 Motor de Precios</h3>
+                    <p>Calcula precios óptimos y simula puntuaciones para maximizar tus posibilidades de adjudicación.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>✅ Control de Calidad</h3>
+                    <p>Checklist dinámico y validador pre-envío para evitar errores costosos.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📊 Dashboard Completo</h3>
+                    <p>KPIs en tiempo real, histórico de licitaciones y análisis de competencia.</p>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <h2>🛠️ Tecnología</h2>
+                <div class="badges">
+                    <span class="badge">Python 3.11+</span>
+                    <span class="badge">IA Local (Ollama)</span>
+                    <span class="badge">Interfaz Gráfica Moderna</span>
+                    <span class="badge">Base de Datos SQLite</span>
+                    <span class="badge">Procesamiento PDF/Word</span>
+                    <span class="badge">Windows 10/11</span>
+                </div>
+            </div>
+            
+            <div class="pricing">
+                <h2>💼 Planes Disponibles</h2>
+                <p style="font-size: 1.2em; margin-bottom: 20px;">Software privado - Acceso al código fuente completo</p>
+                
+                <div class="plans">
+                    <div class="plan">
+                        <h3>💼 Individual</h3>
+                        <div class="price">149€</div>
+                        <p style="color: #666; margin-bottom: 20px;">Pago único</p>
+                        <ul>
+                            <li>Código fuente completo</li>
+                            <li>1 usuario/empresa</li>
+                            <li>Actualizaciones 6 meses</li>
+                            <li>Soporte por email</li>
+                            <li>Instalador automático</li>
+                            <li>Manual completo</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Solicitar</a>
+                    </div>
+                    
+                    <div class="plan" style="border: 3px solid #764ba2;">
+                        <h3>🏢 Empresa</h3>
+                        <div class="price">399€</div>
+                        <p style="color: #666; margin-bottom: 20px;">Pago único</p>
+                        <ul>
+                            <li>Código fuente completo</li>
+                            <li>Hasta 5 usuarios</li>
+                            <li>Actualizaciones 12 meses</li>
+                            <li>Soporte prioritario</li>
+                            <li>Instalación incluida</li>
+                            <li>Configuración personalizada</li>
+                        </ul>
+                        <a href="#contacto" class="cta-button">Solicitar</a>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 1.1em;">
+                    ⚙️ <strong>Servicios adicionales:</strong> Instalación remota (+99€) • Soporte técnico (50€/hora) • Personalización bajo demanda
+                </p>
+            </div>
+            
+            <div class="faq">
+                <h2>❓ Preguntas Frecuentes</h2>
+                
+                <div class="faq-item">
+                    <h4>¿Necesito conocimientos de programación?</h4>
+                    <p>No. Incluye instalador automático y interfaz gráfica completa. Solo ejecutas un .bat y ya está listo para usar.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>¿Funciona en Mac/Linux?</h4>
+                    <p>Actualmente solo Windows 10/11. Versiones para otros SO disponibles bajo demanda.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>¿Puedo modificar el código?</h4>
+                    <p>Sí, obtienes acceso completo al código fuente para uso interno en tu empresa.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>¿Incluye IA sin costes adicionales?</h4>
+                    <p>Sí, usa Ollama (IA local 100% gratuita). No necesitas APIs de pago ni suscripciones mensuales.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>¿Hay versión de prueba?</h4>
+                    <p>No hay demo pública por ser código privado. Puedo mostrarte screenshots o video. Contacta para más información.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>¿Qué pasa después del periodo de actualizaciones?</h4>
+                    <p>El software sigue funcionando perfectamente de por vida. Solo dejas de recibir actualizaciones automáticas.</p>
+                </div>
+            </div>
+            
+            <div class="contact" id="contacto">
+                <h2>📫 Contacto</h2>
+                <p style="font-size: 1.2em; margin: 20px 0 30px 0;">
+                    ¿Interesado en obtener una licencia?
+                </p>
+                <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">
+                    🌐 <strong>Web:</strong> <a href="https://www.isasilab3d.com" style="color: #667eea; text-decoration: none; font-weight: bold;">www.isasilab3d.com</a><br>
+                    📧 Contacto a través de la web o por GitHub
+                </p>
+                <p style="margin-top: 30px; color: #666;">
+                    <strong>Proceso simple:</strong><br>
+                    1. Contacta por email • 2. Elige tu plan • 3. Realiza el pago • 4. Recibe acceso en 24h
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2em; margin-bottom: 10px;">
+                <strong>© 2026 IsasiLab - Todos los derechos reservados</strong>
+            </p>
+            <p>Software empresarial • Diseño 3D • Arquitectura Cloud</p>
+            <p style="margin-top: 20px;">
+                <a href="https://github.com/IsasiLab" style="color: white; text-decoration: none;">
+                    📦 Ver perfil en GitHub
+                </a>
+            </p>
+            <p style="margin-top: 30px; opacity: 0.8;">
+                Hecho con ❤️ en España 🇪🇸
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
