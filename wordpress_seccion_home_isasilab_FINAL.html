@@ -1,0 +1,944 @@
+<!-- ====================================================== -->
+<!-- SECCIÓN HOME ISASILAB - INFORMACIÓN PERSONAL + SOFTWARE -->
+<!-- Para página principal WordPress                         -->
+<!-- Autor: IsasiLab                                         -->
+<!-- Fecha: Febrero 2026 - VERSIÓN FINAL CON URLS           -->
+<!-- ====================================================== -->
+
+<style>
+.isasilab-home {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0A0C11 0%, #1a1d29 100%);
+    color: #E0E0E0;
+    padding: 80px 20px;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+/* Header personal */
+.personal-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.personal-header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 50%, #00ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.personal-header .tagline {
+    font-size: 1.6rem;
+    color: #25c5c9;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.personal-header .intro {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #B0B0B0;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(37, 197, 201, 0.05);
+    border-left: 5px solid #25c5c9;
+    padding: 30px 40px;
+    border-radius: 10px;
+}
+
+/* Sección Sobre Mí */
+.sobre-mi-section {
+    margin: 80px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobre-mi-texto h2 {
+    font-size: 2.8rem;
+    color: #25c5c9;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.sobre-mi-texto p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #C0C0C0;
+    margin-bottom: 20px;
+}
+
+.sobre-mi-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-box {
+    background: #1a1d29;
+    border: 2px solid #25c5c9;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(37, 197, 201, 0.4);
+}
+
+.stat-box .numero {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #25c5c9;
+    display: block;
+}
+
+.stat-box .label {
+    font-size: 1rem;
+    color: #B0B0B0;
+    margin-top: 10px;
+}
+
+/* Aptitudes y Servicios */
+.aptitudes-servicios {
+    margin: 80px 0;
+}
+
+.aptitudes-servicios h2 {
+    font-size: 2.8rem;
+    color: #25c5c9;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.aptitudes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.aptitud-card {
+    background: linear-gradient(135deg, #1a1d29 0%, #0A0C11 100%);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.aptitud-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1b3385, #25c5c9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.aptitud-card:hover::before {
+    opacity: 0.1;
+}
+
+.aptitud-card:hover {
+    border-color: #25c5c9;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(37, 197, 201, 0.4);
+}
+
+.aptitud-card .icono {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.aptitud-card h3 {
+    font-size: 1.5rem;
+    color: #25c5c9;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.aptitud-card p {
+    font-size: 1rem;
+    color: #B0B0B0;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+/* Servicios específicos */
+.servicios-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio-item {
+    background: #1a1d29;
+    border-left: 5px solid #25c5c9;
+    padding: 25px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.servicio-item:hover {
+    border-left-color: #00ff00;
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(37, 197, 201, 0.3);
+}
+
+.servicio-item .icono-servicio {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.servicio-item h4 {
+    color: #25c5c9;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.servicio-item p {
+    color: #B0B0B0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Software Productos */
+.software-section {
+    margin: 100px 0;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #1a1d29 0%, #0A0C11 100%);
+    border-radius: 30px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+}
+
+.software-section h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 50%, #00ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.software-section .subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #B0B0B0;
+    margin-bottom: 60px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.producto-card {
+    background: #000000;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* LicitaBotGi - Azul */
+.producto-card.licitabot {
+    border-color: #25c5c9;
+}
+
+.producto-card.licitabot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 100%);
+    opacity: 0.05;
+    transition: opacity 0.4s ease;
+}
+
+.producto-card.licitabot:hover::before {
+    opacity: 0.15;
+}
+
+.producto-card.licitabot:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(37, 197, 201, 0.4);
+}
+
+/* FacturaeManager - Verde */
+.producto-card.facturae {
+    border-color: #00ff00;
+}
+
+.producto-card.facturae::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #003300 0%, #00ff00 100%);
+    opacity: 0.05;
+    transition: opacity 0.4s ease;
+}
+
+.producto-card.facturae:hover::before {
+    opacity: 0.15;
+}
+
+.producto-card.facturae:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(0, 255, 0, 0.4);
+}
+
+.producto-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.producto-card.licitabot h3 {
+    color: #25c5c9;
+}
+
+.producto-card.facturae h3 {
+    color: #00ff00;
+}
+
+.producto-card .descripcion {
+    font-size: 1.1rem;
+    color: #C0C0C0;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.producto-card .caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.producto-card .caracteristicas li {
+    padding: 10px 0;
+    color: #B0B0B0;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.producto-card .caracteristicas li:last-child {
+    border-bottom: none;
+}
+
+.producto-card .precio {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.producto-card.licitabot .precio {
+    color: #25c5c9;
+}
+
+.producto-card.facturae .precio {
+    color: #00ff00;
+}
+
+.producto-card .btn-ver-mas {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.producto-card.licitabot .btn-ver-mas {
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 100%);
+    color: #FFFFFF;
+    border: 2px solid #25c5c9;
+}
+
+.producto-card.licitabot .btn-ver-mas:hover {
+    background: #FFFFFF;
+    color: #1b3385;
+    transform: scale(1.1);
+}
+
+.producto-card.facturae .btn-ver-mas {
+    background: #00ff00;
+    color: #000000;
+    border: 2px solid #00ff00;
+}
+
+.producto-card.facturae .btn-ver-mas:hover {
+    background: #000000;
+    color: #00ff00;
+    transform: scale(1.1);
+}
+
+/* Otros Servicios Sección */
+.otros-servicios-section {
+    margin: 100px 0;
+}
+
+.otros-servicios-section h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 50%, #cc5de8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.otros-servicios-section .subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #B0B0B0;
+    margin-bottom: 60px;
+}
+
+.otros-servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.servicio-grande {
+    background: linear-gradient(135deg, #1a1d29 0%, #0A0C11 100%);
+    border: 3px solid transparent;
+    border-radius: 25px;
+    padding: 50px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Diseño 3D - Rosa/Morado */
+.servicio-grande.diseno3d {
+    border-color: #f06595;
+}
+
+.servicio-grande.diseno3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
+    opacity: 0.05;
+    transition: opacity 0.4s ease;
+}
+
+.servicio-grande.diseno3d:hover::before {
+    opacity: 0.15;
+}
+
+.servicio-grande.diseno3d:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(240, 101, 149, 0.4);
+}
+
+/* Cloud - Morado */
+.servicio-grande.cloud {
+    border-color: #cc5de8;
+}
+
+.servicio-grande.cloud::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #845ef7 0%, #cc5de8 100%);
+    opacity: 0.05;
+    transition: opacity 0.4s ease;
+}
+
+.servicio-grande.cloud:hover::before {
+    opacity: 0.15;
+}
+
+.servicio-grande.cloud:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(204, 93, 232, 0.4);
+}
+
+.servicio-grande .icono-grande {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.servicio-grande.diseno3d .icono-grande {
+    color: #f06595;
+}
+
+.servicio-grande.cloud .icono-grande {
+    color: #cc5de8;
+}
+
+.servicio-grande h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.servicio-grande.diseno3d h3 {
+    color: #f06595;
+}
+
+.servicio-grande.cloud h3 {
+    color: #cc5de8;
+}
+
+.servicio-grande .descripcion-larga {
+    font-size: 1.15rem;
+    color: #C0C0C0;
+    line-height: 1.9;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.servicio-grande ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.servicio-grande ul li {
+    padding: 12px 0;
+    color: #B0B0B0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.servicio-grande ul li:last-child {
+    border-bottom: none;
+}
+
+.servicio-grande .btn-servicio {
+    display: inline-block;
+    padding: 18px 45px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.servicio-grande.diseno3d .btn-servicio {
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
+    color: #FFFFFF;
+    border: 2px solid #f06595;
+}
+
+.servicio-grande.diseno3d .btn-servicio:hover {
+    background: #FFFFFF;
+    color: #f06595;
+    transform: scale(1.1);
+}
+
+.servicio-grande.cloud .btn-servicio {
+    background: linear-gradient(135deg, #845ef7 0%, #cc5de8 100%);
+    color: #FFFFFF;
+    border: 2px solid #cc5de8;
+}
+
+.servicio-grande.cloud .btn-servicio:hover {
+    background: #FFFFFF;
+    color: #cc5de8;
+    transform: scale(1.1);
+}
+
+/* CTA Contacto */
+.contacto-cta {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.contacto-cta h3 {
+    font-size: 2rem;
+    color: #25c5c9;
+    margin-bottom: 20px;
+}
+
+.contacto-cta p {
+    font-size: 1.2rem;
+    color: #B0B0B0;
+    margin-bottom: 30px;
+}
+
+.contacto-cta .btn-contacto {
+    display: inline-block;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 100%);
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 20px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(37, 197, 201, 0.4);
+}
+
+.contacto-cta .btn-contacto:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 60px rgba(37, 197, 201, 0.6);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sobre-mi-section,
+    .productos-grid,
+    .otros-servicios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .aptitudes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .servicios-lista {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .personal-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .aptitudes-grid,
+    .sobre-mi-stats {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<div class="isasilab-home">
+    
+    <!-- Header Personal -->
+    <div class="personal-header">
+        <h1>🚀 ISASILAB</h1>
+        <p class="tagline">Desarrollo de Software Profesional | Automatización Inteligente | Soluciones Empresariales</p>
+        <div class="intro">
+            <strong>Gabriel Isasi</strong> - Ingeniero de Software especializado en automatización empresarial 
+            y herramientas de productividad para PYMEs españolas. Creo software que resuelve problemas reales: 
+            desde gestión de licitaciones públicas hasta procesamiento de facturación electrónica. 
+            <strong>Tecnología accesible, precios justos, soporte dedicado.</strong>
+        </div>
+    </div>
+
+    <!-- Sobre Mí -->
+    <div class="sobre-mi-section">
+        <div class="sobre-mi-texto">
+            <h2>👨‍💻 Sobre Mí</h2>
+            <p>
+                Desarrollador con <strong>+5 años de experiencia</strong> construyendo soluciones de software 
+                para empresas españolas. Mi especialidad: convertir procesos manuales complejos en herramientas 
+                automáticas que ahorran tiempo y dinero.
+            </p>
+            <p>
+                Trabajo con <strong>Python</strong>, <strong>JavaScript</strong>, <strong>bases de datos</strong> 
+                y <strong>inteligencia artificial local</strong>. No creo en soluciones complicadas: si no 
+                resuelve un problema real, no tiene sentido.
+            </p>
+            <p>
+                <strong>Filosofía:</strong> Software profesional a precios accesibles. Sin suscripciones trampa, 
+                sin costes ocultos. Pagas una vez, es tuyo para siempre.
+            </p>
+        </div>
+        
+        <div class="sobre-mi-stats">
+            <div class="stat-box">
+                <span class="numero">5+</span>
+                <span class="label">Años Experiencia</span>
+            </div>
+            <div class="stat-box">
+                <span class="numero">20+</span>
+                <span class="label">Proyectos Completados</span>
+            </div>
+            <div class="stat-box">
+                <span class="numero">100%</span>
+                <span class="label">Satisfacción Clientes</span>
+            </div>
+            <div class="stat-box">
+                <span class="numero">24/7</span>
+                <span class="label">Código fuente abierto</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aptitudes -->
+    <div class="aptitudes-servicios">
+        <h2>💪 Aptitudes Técnicas</h2>
+        
+        <div class="aptitudes-grid">
+            <div class="aptitud-card">
+                <div class="icono">🐍</div>
+                <h3>Python Avanzado</h3>
+                <p>Backend robusto, procesamiento de datos, automatización, IA local con modelos LLM, APIs REST.</p>
+            </div>
+            
+            <div class="aptitud-card">
+                <div class="icono">🎨</div>
+                <h3>Interfaces Desktop</h3>
+                <p>CustomTkinter, PyQt6, diseño UX/UI profesional, temas personalizados, responsive design.</p>
+            </div>
+            
+            <div class="aptitud-card">
+                <div class="icono">🗄️</div>
+                <h3>Bases de Datos</h3>
+                <p>SQLite, PostgreSQL, MySQL, diseño de esquemas, optimización de consultas, migraciones.</p>
+            </div>
+            
+            <div class="aptitud-card">
+                <div class="icono">🤖</div>
+                <h3>IA Local</h3>
+                <p>Modelos LLM locales (Phi, Llama), procesamiento NLP, extracción de datos, generación de texto.</p>
+            </div>
+            
+            <div class="aptitud-card">
+                <div class="icono">🔧</div>
+                <h3>Automatización</h3>
+                <p>Web scraping, procesamiento PDF/XML, integración APIs públicas, tareas programadas.</p>
+            </div>
+            
+            <div class="aptitud-card">
+                <div class="icono">🌐</div>
+                <h3>Desarrollo Web</h3>
+                <p>HTML5, CSS3, JavaScript, responsive, WordPress, landing pages, formularios integrados.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Servicios -->
+    <div class="aptitudes-servicios">
+        <h2>🛠️ Servicios</h2>
+        
+        <div class="servicios-lista">
+            <div class="servicio-item">
+                <span class="icono-servicio">💼</span>
+                <div>
+                    <h4>Software a Medida</h4>
+                    <p>Aplicaciones desktop Windows personalizadas para tu negocio. Desde gestión documental hasta sistemas de facturación.</p>
+                </div>
+            </div>
+            
+            <div class="servicio-item">
+                <span class="icono-servicio">🤖</span>
+                <div>
+                    <h4>Automatización con IA</h4>
+                    <p>Implementación de inteligencia artificial local para análisis de documentos, extracción de datos, generación de contenido.</p>
+                </div>
+            </div>
+            
+            <div class="servicio-item">
+                <span class="icono-servicio">🔌</span>
+                <div>
+                    <h4>Integraciones API</h4>
+                    <p>Conexión entre tus sistemas existentes: ERP, CRM, plataformas públicas, servicios web. Automatización de flujos de datos.</p>
+                </div>
+            </div>
+            
+            <div class="servicio-item">
+                <span class="icono-servicio">📊</span>
+                <div>
+                    <h4>Análisis de Datos</h4>
+                    <p>Dashboards interactivos, informes automatizados, visualización de KPIs, exportación Excel/PDF.</p>
+                </div>
+            </div>
+            
+            <div class="servicio-item">
+                <span class="icono-servicio">🔐</span>
+                <div>
+                    <h4>Procesamiento XML/PDF</h4>
+                    <p>Validación, firma digital, extracción de datos, transformaciones, cumplimiento normativo (FacturaE, AEAT).</p>
+                </div>
+            </div>
+            
+            <div class="servicio-item">
+                <span class="icono-servicio">📱</span>
+                <div>
+                    <h4>Consultoría Técnica</h4>
+                    <p>Asesoramiento en arquitectura de software, elección de tecnologías, optimización de procesos, formación de equipos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Software Productos -->
+    <div class="software-section">
+        <h2>🎯 Software Disponible</h2>
+        <p class="subtitle">Soluciones profesionales listas para usar - Pago único, sin suscripciones</p>
+        
+        <div class="productos-grid">
+            
+            <!-- LicitaBotGi -->
+            <div class="producto-card licitabot">
+                <h3>🤖 LicitaBotGi</h3>
+                <p class="descripcion">
+                    Sistema inteligente de gestión de licitaciones con IA local. Analiza pliegos, 
+                    extrae códigos CPV, genera propuestas técnicas y optimiza precios automáticamente.
+                </p>
+                <ul class="caracteristicas">
+                    <li>🤖 IA Local Phi-3.5-mini (sin costes por uso)</li>
+                    <li>📝 Análisis automático de PDFs</li>
+                    <li>💰 Motor de cálculo de precios</li>
+                    <li>📊 Base de datos de licitaciones</li>
+                    <li>🔍 9.295 códigos CPV oficiales</li>
+                </ul>
+                <div class="precio">25€</div>
+                <a href="/licitabotgi" class="btn-ver-mas">📖 Ver Detalles</a>
+            </div>
+            
+            <!-- FacturaeManager -->
+            <div class="producto-card facturae">
+                <h3>🧾 FacturaeManager</h3>
+                <p class="descripcion">
+                    Procesador avanzado de facturas FacturaE XML. Valida, firma, modifica y organiza 
+                    facturas electrónicas cumpliendo normativa AEAT española.
+                </p>
+                <ul class="caracteristicas">
+                    <li>✅ Validación XSD oficial AEAT</li>
+                    <li>🔐 Firma digital (AutoFirma/DNIe)</li>
+                    <li>🏛️ Módulo Andalucía (contratos públicos)</li>
+                    <li>🔢 Normalización de decimales</li>
+                    <li>📁 Organización automática</li>
+                </ul>
+                <div class="precio">25€</div>
+                <a href="/facturaemanager" class="btn-ver-mas">📖 Ver Detalles</a>
+            </div>
+            
+        </div>
+
+        <!-- CTA Contacto -->
+        <div class="contacto-cta">
+            <h3>¿Necesitas un desarrollo personalizado?</h3>
+            <p>Hablemos de tu proyecto. Presupuesto sin compromiso en 24-48h.</p>
+            <a href="/solicitudes" class="btn-contacto">
+                📧 Solicitar Información
+            </a>
+        </div>
+    </div>
+
+    <!-- Otros Servicios: Diseño 3D y Cloud -->
+    <div class="otros-servicios-section">
+        <h2>🎨 Otros Servicios</h2>
+        <p class="subtitle">Modelado 3D profesional y soluciones cloud personalizadas</p>
+        
+        <div class="otros-servicios-grid">
+            
+            <!-- Diseño 3D -->
+            <div class="servicio-grande diseno3d">
+                <div class="icono-grande">🎲</div>
+                <h3>Diseño 3D</h3>
+                <p class="descripcion-larga">
+                    Modelado 3D profesional para arquitectura, ingeniería, videojuegos y fabricación. 
+                    Desde maquetas arquitectónicas hasta piezas funcionales para impresión 3D. 
+                    Trabajo con Blender, FreeCAD y herramientas CAD especializadas.
+                </p>
+                <ul>
+                    <li>🏠 Modelado arquitectónico (edificios, interiores, exteriores)</li>
+                    <li>🔧 Diseño mecánico para fabricación e impresión 3D</li>
+                    <li>🎮 Assets para videojuegos y realidad virtual</li>
+                    <li>📐 Planos técnicos y renders fotorrealistas</li>
+                    <li>🖨️ Optimización para impresión 3D (FDM/SLA)</li>
+                </ul>
+                <a href="/modelos-3d" class="btn-servicio">🖼️ Ver Modelos</a>
+                <a href="/solicitudes" class="btn-servicio">📧 Solicitar Presupuesto</a>
+            </div>
+            
+            <!-- Cloud -->
+            <div class="servicio-grande cloud">
+                <div class="icono-grande">☁️</div>
+                <h3>Arquitectura Cloud</h3>
+                <p class="descripcion-larga">
+                    Diseño e implementación de infraestructuras cloud escalables. Migración de aplicaciones 
+                    on-premise a AWS, Azure o Google Cloud. Optimización de costes, seguridad y rendimiento. 
+                    DevOps, CI/CD y automatización completa.
+                </p>
+                <ul>
+                    <li>☁️ Migración y arquitectura en AWS/Azure/GCP</li>
+                    <li>🔒 Seguridad cloud (IAM, VPC, cifrado, backups)</li>
+                    <li>📈 Auto-escalado y alta disponibilidad</li>
+                    <li>🔄 Pipelines CI/CD con GitHub Actions/GitLab</li>
+                    <li>💰 Optimización de costes cloud (hasta 40% ahorro)</li>
+                </ul>
+                <a href="/solicitudes" class="btn-servicio">📧 Consultar Proyecto</a>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
