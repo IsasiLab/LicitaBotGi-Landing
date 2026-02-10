@@ -17,7 +17,7 @@ Software profesional para empresas españolas que participan en contratación p�
 
 ## Licencias
 
-- **Licencia Individual**: 99€ (pago único)
+- **Licencia Individual**: 25€ (pago único)
 
 Acceso completo al código fuente en repositorio privado de GitHub.
 

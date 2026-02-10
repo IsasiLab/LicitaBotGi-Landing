@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IsasiLab - Software empresarial, diseño 3D profesional y arquitectura cloud Microsoft 365. Soluciones tecnológicas innovadoras para empresas españolas.">
+    <meta name="keywords" content="software licitaciones, diseño 3D, arquitectura cloud, Microsoft 365, LicitaBotGi, impresión 3D">
+    <title>IsasiLab - Software Empresarial | Diseño 3D | Arquitectura Cloud</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        /* NAVIGATION BAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+        
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+        
+        .nav-menu .nav-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .nav-menu .nav-cta:hover {
+            transform: scale(1.05);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #667eea;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* CARDS GRID */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        
+        .card-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .card-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+        }
+        
+        .card-features li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+        
+        .card-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #059669;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .card-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .card-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+        }
+        
+        .card-price {
+            font-size: 2.5em;
+            color: #764ba2;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .card-price-note {
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        /* SOFTWARE SECTION - DESTACADA */
+        .software-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .featured-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            grid-column: 1 / -1;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .featured-card::before {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .featured-card .card-title,
+        .featured-card .card-description,
+        .featured-card .card-features li {
+            color: white;
+        }
+        
+        .featured-card .card-features li::before {
+            color: #a0f0d0;
+        }
+        
+        .featured-card .card-button {
+            background: white;
+            color: #667eea;
+        }
+        
+        .featured-card .card-button:hover {
+            background: #f8f9fa;
+        }
+        
+        .featured-card .card-price {
+            color: white;
+        }
+        
+        /* PLACEHOLDER CARDS para futuros software */
+        .placeholder-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 3px dashed #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        
+        .placeholder-card::before {
+            display: none;
+        }
+        
+        .placeholder-card .card-icon {
+            opacity: 0.3;
+        }
+        
+        .placeholder-card .card-title {
+            color: #999;
+        }
+        
+        /* DESIGN 3D SECTION */
+        .design-section {
+            background: white;
+        }
+        
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .design-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .design-item:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .design-item-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .design-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        /* IMAGE CONTAINERS */
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .featured-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin: 30px auto;
+            display: block;
+        }
+        
+        /* CLOUD SECTION */
+        .cloud-section {
+            background: linear-gradient(135deg, #0078d4 0%, #0053a0 100%);
+            color: white;
+        }
+        
+        .cloud-section .section-title {
+            color: white;
+        }
+        
+        .cloud-section .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .cloud-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .cloud-feature {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .cloud-feature:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .cloud-feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #667eea;
+            font-size: 1.3em;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #667eea;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .hero {
+                min-height: 500px;
+                padding: 80px 20px 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-card {
+                grid-column: 1;
+            }
+            
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <span>🚀</span>
+                <span>IsasiLab</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#software">Software</a></li>
+                <li><a href="#diseno3d">Diseño 3D</a></li>
+                <li><a href="#cloud">Cloud M365</a></li>
+                <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>🚀 IsasiLab</h1>
+            <p class="subtitle">Software Empresarial • Diseño 3D Profesional • Arquitectura Cloud</p>
+            <p class="tagline">
+                Soluciones tecnológicas innovadoras para empresas españolas
+            </p>
+            <div class="hero-badges">
+                <span class="badge">🤖 Inteligencia Artificial</span>
+                <span class="badge">🎨 Diseño 3D Personalizado</span>
+                <span class="badge">☁️ Microsoft 365</span>
+                <span class="badge">🇪🇸 Made in Spain</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOFTWARE SECTION -->
+    <section class="software-section" id="software">
+        <div class="container">
+            <h2 class="section-title">💼 Software Empresarial</h2>
+            <p class="section-subtitle">
+                Desarrollamos herramientas profesionales para automatizar procesos empresariales con Inteligencia Artificial
+            </p>
+            
+            <div class="cards-grid">
+                <!-- LICITABOTGI - FEATURED -->
+                <div class="card featured-card">
+                    <div class="image-placeholder" style="background: rgba(255,255,255,0.1); margin-bottom: 30px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 5em; margin-bottom: 10px;">🚀</div>
+                            <div style="font-size: 1.2em; opacity: 0.9;">Software de Licitaciones con IA</div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="card-title">LicitaBotGi</h3>
+                    <p class="card-description">
+                        Sistema inteligente para automatizar el análisis y gestión de licitaciones públicas. 
+                        Extrae requisitos, genera propuestas y optimiza precios con IA local.
+                    </p>
+                    
+                    <ul class="card-features">
+                        <li>Análisis automático de PDFs con IA</li>
+                        <li>Extracción de CPVs y requisitos</li>
+                        <li>Generación de propuestas en Word</li>
+                        <li>Motor de precios optimizado</li>
+                        <li>100% privado - IA local (Ollama)</li>
+                        <li>Instalador automático incluido</li>
+                    </ul>
+                    
+                    <div class="card-price">99€ <span class="card-price-note">/ licencia</span></div>
+                    
+                    <a href="https://isasilab.github.io/LicitaBotGi-Landing/" target="_blank" class="card-button">
+                        Ver Detalles →
+                    </a>
+                </div>
+                
+                <!-- PLACEHOLDER para futuro software -->
+                <!-- Para añadir imagen real, reemplaza el div image-placeholder con:
+                     <img src="URL_DE_TU_IMAGEN" alt="Descripción" class="featured-image"> -->
+                <div class="card placeholder-card">
+                    <div class="image-placeholder" style="border: 3px dashed #ddd;">
+                        📦
+                    </div>
+                    <h3 class="card-title">Próximamente</h3>
+                    <p style="color: #999;">Más herramientas empresariales en desarrollo</p>
+                </div>
+                
+                <!-- PLACEHOLDER para futuro software -->
+                <div class="card placeholder-card">
+                    <div class="image-placeholder" style="border: 3px dashed #ddd;">
+                        🔧
+                    </div>
+                    <h3 class="card-title">Próximamente</h3>
+                    <p style="color: #999;">Nuevos proyectos en camino</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISEÑO 3D SECTION -->
+    <section class="design-section" id="diseno3d">
+        <div class="container">
+            <h2 class="section-title">🎨 Diseño 3D Profesional</h2>
+            <p class="section-subtitle">
+                Creación de modelos 3D 100% personalizados para impresión 3D, visualización y fabricación
+            </p>
+            
+            <div class="design-grid">
+                <div class="design-item">
+                    <div class="design-item-icon">🖼️</div>
+                    <h3>Litofanías</h3>
+                    <p>Transforma tus fotos en relieves 3D iluminados</p>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-item-icon">🔧</div>
+                    <h3>Piezas Técnicas</h3>
+                    <p>Diseño de piezas de repuesto y componentes mecánicos</p>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-item-icon">🎭</div>
+                    <h3>Decoración</h3>
+                    <p>Artículos personalizados para hogar y oficina</p>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-item-icon">🏥</div>
+                    <h3>Imágenes DICOM</h3>
+                    <p>Tratamiento de imágenes médicas para impresión 3D</p>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-item-icon">🦴</div>
+                    <h3>Figuras Articuladas</h3>
+                    <p>Animales y personajes con articulaciones móviles</p>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-item-icon">💍</div>
+                    <h3>Accesorios</h3>
+                    <p>Llaveros, pulseras y complementos personalizados</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="mailto:isasiapp2023@gmail.com" class="card-button">
+                    Consultar Proyecto →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOUD SECTION -->
+    <section class="cloud-section" id="cloud">
+        <div class="container">
+            <h2 class="section-title">☁️ Arquitectura Cloud Microsoft 365</h2>
+            <p class="section-subtitle">
+                Implementación, consultoría y automatización de soluciones en la nube con Microsoft 365
+            </p>
+            
+            <div class="cloud-features">
+                <div class="cloud-feature">
+                    <div class="cloud-feature-icon">🏢</div>
+                    <h3>Implementación M365</h3>
+                    <p>Despliegue completo de Microsoft 365 para tu empresa</p>
+                </div>
+                
+                <div class="cloud-feature">
+                    <div class="cloud-feature-icon">🔄</div>
+                    <h3>Automatización</h3>
+                    <p>Power Automate, Power Apps y flujos de trabajo</p>
+                </div>
+                
+                <div class="cloud-feature">
+                    <div class="cloud-feature-icon">🔐</div>
+                    <h3>Seguridad</h3>
+                    <p>Configuración de políticas y protección de datos</p>
+                </div>
+                
+                <div class="cloud-feature">
+                    <div class="cloud-feature-icon">📊</div>
+                    <h3>SharePoint & Teams</h3>
+                    <p>Optimización de colaboración empresarial</p>
+                </div>
+                
+                <div class="cloud-feature">
+                    <div class="cloud-feature-icon">🎓</div>
+                    <h3>Formación</h3>
+                    <p>Capacitación de equipos en herramientas M365</p>
+                </div>
+                
+                <div class="cloud-feature">
+                    <div class="cloud-feature-icon">🛠️</div>
+                    <h3>Soporte Técnico</h3>
+                    <p>Mantenimiento y resolución de incidencias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contacto">
+        <div class="container">
+            <h2>¿Listo para empezar tu proyecto?</h2>
+            <p>Cuéntanos qué necesitas y te ayudaremos a hacerlo realidad</p>
+            <div class="cta-buttons">
+                <a href="mailto:isasiapp2023@gmail.com" class="cta-button">
+                    Contactar Ahora
+                </a>
+                <a href="https://isasilab.github.io/LicitaBotGi-Landing/" target="_blank" class="cta-button secondary">
+                    Ver Software LicitaBotGi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>IsasiLab</h3>
+                <p>Soluciones tecnológicas innovadoras</p>
+                <p>Software • Diseño 3D • Cloud</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/isasilab3d" target="_blank" class="social-link" title="Instagram">📷</a>
+                    <a href="mailto:isasiapp2023@gmail.com" class="social-link" title="Email">✉️</a>
+                    <a href="https://github.com/IsasiLab" target="_blank" class="social-link" title="GitHub">💻</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Software</h3>
+                <a href="https://isasilab.github.io/LicitaBotGi-Landing/">LicitaBotGi</a>
+                <a href="https://github.com/IsasiLab">GitHub</a>
+                <a href="mailto:isasiapp2023@gmail.com">Consultas Personalizadas</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Servicios 3D</h3>
+                <a href="mailto:isasiapp2023@gmail.com">Litofanías</a>
+                <a href="mailto:isasiapp2023@gmail.com">Piezas Técnicas</a>
+                <a href="mailto:isasiapp2023@gmail.com">DICOM / Médico</a>
+                <a href="mailto:isasiapp2023@gmail.com">Decoración</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 isasiapp2023@gmail.com</p>
+                <p>🌐 www.isasilab3d.com</p>
+                <p>💼 Consultas y proyectos</p>
+                <p>🇪🇸 España</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 IsasiLab - Todos los derechos reservados</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Software Empresarial • Diseño 3D Profesional • Arquitectura Cloud Microsoft 365
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            // Animate hamburger icon
+            const spans = this.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    const spans = mobileMenuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        });
+        
+        // Add active class to nav links based on scroll position
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const sections = document.querySelectorAll('section, .hero');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#667eea';
+                } else {
+                    link.style.color = '#333';
+                }
+            });
+        });
+        
+        // Smooth scroll for Safari
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

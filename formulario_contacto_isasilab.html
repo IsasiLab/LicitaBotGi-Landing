@@ -1,0 +1,360 @@
+<!-- 
+==============================================
+FORMULARIO DE CONTACTO - ISASILAB
+==============================================
+
+INSTRUCCIONES PARA WORDPRESS:
+1. Ve a Páginas → Añadir nueva
+2. Título: "Solicitar Proyecto"
+3. Añade bloque "HTML Personalizado"
+4. Pega TODO este código
+5. Publica
+
+O para añadir a página existente:
+1. Edita la página donde quieras el formulario
+2. Añade bloque "HTML Personalizado"
+3. Pega el código
+4. Actualiza
+
+✅ Formularios para Diseño 3D y Software
+✅ Upload de imágenes incluido
+✅ Se envía a: isasiapp2023@gmail.com
+✅ Diseño adaptado a BizBoost (dark theme)
+==============================================
+-->
+
+<div class="wp-block-group alignfull" style="margin: clamp(42px, 7.5vw, 140px) 0; padding: clamp(60px, 8vw, 100px) 20px; background: #0A0C11;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        
+        <!-- TÍTULO -->
+        <div style="text-align: center; margin-bottom: clamp(35px, 3.5vw, 56px);">
+            <h2 style="font-size: clamp(32px, 2.6vw, 49px); margin-bottom: 20px; color: #ffffff; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 700; line-height: 1.43;">
+                📋 Solicitar Proyecto
+            </h2>
+            <p style="font-size: clamp(1rem, 2vw, 1.2rem); color: #abadb3; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; line-height: 1.75;">
+                Cuéntanos tu proyecto y te respondemos en 24-48 horas
+            </p>
+        </div>
+
+        <!-- FORMULARIO -->
+        <div style="background: #222222; padding: clamp(30px, 4vw, 50px); border-radius: 15px; border: 2px solid #323438; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            
+            <form action="https://formsubmit.co/isasiapp2023@gmail.com" method="POST" enctype="multipart/form-data" id="contactForm">
+                
+                <!-- Configuración FormSubmit (campos ocultos) -->
+                <input type="hidden" name="_subject" value="Nueva Solicitud de Proyecto - IsasiLab">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+                
+                <!-- DATOS PERSONALES -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #2292b1; font-size: clamp(1.3rem, 2vw, 1.6rem); margin-bottom: 25px; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 600;">
+                        📝 Tus Datos
+                    </h3>
+                    
+                    <!-- Nombre -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            Nombre completo <span style="color: #25c5c9;">*</span>
+                        </label>
+                        <input type="text" name="nombre" required 
+                               style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor='#2292b1'" 
+                               onblur="this.style.borderColor='#323438'"
+                               placeholder="Tu nombre y apellidos">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            Email <span style="color: #25c5c9;">*</span>
+                        </label>
+                        <input type="email" name="email" required 
+                               style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor='#2292b1'" 
+                               onblur="this.style.borderColor='#323438'"
+                               placeholder="tucorreo@ejemplo.com">
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            Teléfono <span style="color: #abadb3; font-size: 0.9rem;">(opcional)</span>
+                        </label>
+                        <input type="tel" name="telefono" 
+                               style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor='#2292b1'" 
+                               onblur="this.style.borderColor='#323438'"
+                               placeholder="+34 600 000 000">
+                    </div>
+                </div>
+
+                <!-- TIPO DE PROYECTO -->
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #2292b1; font-size: clamp(1.3rem, 2vw, 1.6rem); margin-bottom: 25px; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 600;">
+                        🎯 Tipo de Proyecto
+                    </h3>
+                    
+                    <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                        ¿Qué necesitas? <span style="color: #25c5c9;">*</span>
+                    </label>
+                    <select name="tipo_proyecto" id="tipoProyecto" required 
+                            style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer; transition: border-color 0.3s;"
+                            onfocus="this.style.borderColor='#2292b1'" 
+                            onblur="this.style.borderColor='#323438'"
+                            onchange="mostrarCamposEspecificos()">
+                        <option value="">-- Selecciona una opción --</option>
+                        <option value="Diseño 3D">🎨 Diseño 3D / Impresión 3D</option>
+                        <option value="Software">💻 Software Empresarial</option>
+                        <option value="Otro">📞 Otra consulta</option>
+                    </select>
+                </div>
+
+                <!-- CAMPOS ESPECÍFICOS DISEÑO 3D -->
+                <div id="campos_diseno3d" style="display: none; margin-bottom: 30px;">
+                    <h3 style="color: #25c5c9; font-size: clamp(1.2rem, 1.8vw, 1.4rem); margin-bottom: 20px; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 600;">
+                        🎨 Detalles del Diseño 3D
+                    </h3>
+                    
+                    <!-- Tipo de diseño 3D -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            Tipo de diseño
+                        </label>
+                        <select name="tipo_diseno_3d" 
+                                style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                                onfocus="this.style.borderColor='#2292b1'" 
+                                onblur="this.style.borderColor='#323438'">
+                            <option value="">-- Selecciona --</option>
+                            <option value="Litofanía">🖼️ Litofanía (foto en relieve)</option>
+                            <option value="Pieza Técnica">🔧 Pieza técnica / Repuesto</option>
+                            <option value="Decoración">🎭 Decoración / Arte</option>
+                            <option value="DICOM">🏥 Tratamiento DICOM (médico)</option>
+                            <option value="Figura Articulada">🦴 Figura articulada</option>
+                            <option value="Accesorio">💍 Accesorio (llavero, pulsera...)</option>
+                            <option value="Otro">📦 Otro</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Upload de imágenes -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            Imágenes de referencia <span style="color: #abadb3; font-size: 0.9rem;">(opcional, máx 3 archivos)</span>
+                        </label>
+                        <input type="file" name="attachment" accept="image/*,.pdf" multiple 
+                               style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #abadb3; font-size: 0.95rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                               onfocus="this.style.borderColor='#2292b1'" 
+                               onblur="this.style.borderColor='#323438'">
+                        <small style="display: block; color: #666666; margin-top: 5px; font-size: 0.85rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;">
+                            Formatos: JPG, PNG, PDF. Máximo 10MB por archivo.
+                        </small>
+                    </div>
+                    
+                    <!-- ¿Necesitas impresión? -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            ¿También necesitas impresión 3D?
+                        </label>
+                        <select name="necesita_impresion" 
+                                style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                                onfocus="this.style.borderColor='#2292b1'" 
+                                onblur="this.style.borderColor='#323438'">
+                            <option value="Solo diseño">Solo el diseño 3D</option>
+                            <option value="Diseño + impresión">Diseño + impresión 3D</option>
+                            <option value="Ya tengo el diseño">Ya tengo diseño, solo impresión</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- CAMPOS ESPECÍFICOS SOFTWARE -->
+                <div id="campos_software" style="display: none; margin-bottom: 30px;">
+                    <h3 style="color: #25c5c9; font-size: clamp(1.2rem, 1.8vw, 1.4rem); margin-bottom: 20px; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 600;">
+                        💻 Detalles del Software
+                    </h3>
+                    
+                    <!-- Software específico -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            ¿Qué software te interesa?
+                        </label>
+                        <select name="software_tipo" 
+                                style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                                onfocus="this.style.borderColor='#2292b1'" 
+                                onblur="this.style.borderColor='#323438'">
+                            <option value="">-- Selecciona --</option>
+                            <option value="LicitaBotGi">🚀 LicitaBotGi (Licitaciones con IA)</option>
+                            <option value="Desarrollo personalizado">💡 Desarrollo de software personalizado</option>
+                            <option value="Consultoría">📊 Consultoría / Asesoramiento</option>
+                            <option value="Otro">📦 Otro</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Tamaño empresa -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            Tamaño de tu empresa
+                        </label>
+                        <select name="tamano_empresa" 
+                                style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                                onfocus="this.style.borderColor='#2292b1'" 
+                                onblur="this.style.borderColor='#323438'">
+                            <option value="Autónomo">👤 Autónomo</option>
+                            <option value="1-10 empleados">👥 1-10 empleados</option>
+                            <option value="11-50 empleados">🏢 11-50 empleados</option>
+                            <option value="+50 empleados">🏭 Más de 50 empleados</option>
+                        </select>
+                    </div>
+                    
+                    <!-- ¿Cuándo lo necesitas? -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                            ¿Cuándo lo necesitas?
+                        </label>
+                        <select name="urgencia" 
+                                style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                                onfocus="this.style.borderColor='#2292b1'" 
+                                onblur="this.style.borderColor='#323438'">
+                            <option value="No urgente">🕐 No es urgente (más de 1 mes)</option>
+                            <option value="Normal">📅 En 2-4 semanas</option>
+                            <option value="Urgente">⚡ Urgente (menos de 2 semanas)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DESCRIPCIÓN DEL PROYECTO -->
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                        Describe tu proyecto <span style="color: #25c5c9;">*</span>
+                    </label>
+                    <textarea name="descripcion" required rows="6" 
+                              style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; resize: vertical; transition: border-color 0.3s;"
+                              onfocus="this.style.borderColor='#2292b1'" 
+                              onblur="this.style.borderColor='#323438'"
+                              placeholder="Cuéntanos qué necesitas con el máximo detalle posible..."></textarea>
+                    <small style="display: block; color: #666666; margin-top: 5px; font-size: 0.85rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;">
+                        Cuantos más detalles, mejor podremos ayudarte.
+                    </small>
+                </div>
+
+                <!-- PRESUPUESTO (opcional) -->
+                <div style="margin-bottom: 30px;">
+                    <label style="display: block; color: #ffffff; margin-bottom: 8px; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; font-weight: 500;">
+                        ¿Tienes un presupuesto estimado? <span style="color: #abadb3; font-size: 0.9rem;">(opcional)</span>
+                    </label>
+                    <select name="presupuesto" 
+                            style="width: 100%; padding: 12px 15px; background: #1a1a1a; border: 2px solid #323438; border-radius: 8px; color: #ffffff; font-size: 1rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; cursor: pointer;"
+                            onfocus="this.style.borderColor='#2292b1'" 
+                            onblur="this.style.borderColor='#323438'">
+                        <option value="No definido">No lo tengo definido</option>
+                        <option value="Menos de 100€">Menos de 100€</option>
+                        <option value="100€ - 300€">100€ - 300€</option>
+                        <option value="300€ - 1000€">300€ - 1.000€</option>
+                        <option value="Más de 1000€">Más de 1.000€</option>
+                    </select>
+                </div>
+
+                <!-- BOTÓN ENVIAR -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <button type="submit" 
+                            style="display: inline-block; background: linear-gradient(to right, #1b3385 0%, #25c5c9 100%); color: #ffffff; padding: 18px 50px; border: none; border-radius: 50px; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.2rem); cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(37,197,201,0.3); font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;"
+                            onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 30px rgba(37,197,201,0.5)';"
+                            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 20px rgba(37,197,201,0.3)';">
+                        📨 Enviar Solicitud
+                    </button>
+                    <p style="color: #666666; margin-top: 15px; font-size: 0.9rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;">
+                        Te responderemos en 24-48 horas
+                    </p>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- INFO ADICIONAL -->
+        <div style="margin-top: 40px; text-align: center;">
+            <p style="color: #abadb3; font-size: 0.95rem; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif; line-height: 1.6;">
+                📧 También puedes escribirnos directamente a: 
+                <a href="mailto:isasiapp2023@gmail.com" style="color: #2292b1; text-decoration: none; font-weight: 600;">isasiapp2023@gmail.com</a>
+            </p>
+            <p style="color: #666666; font-size: 0.85rem; margin-top: 10px; font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;">
+                Tus datos se usan solo para responderte. No compartimos información con terceros.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function mostrarCamposEspecificos() {
+    const tipoProyecto = document.getElementById('tipoProyecto').value;
+    const camposDiseno = document.getElementById('campos_diseno3d');
+    const camposSoftware = document.getElementById('campos_software');
+    
+    // Ocultar todos
+    camposDiseno.style.display = 'none';
+    camposSoftware.style.display = 'none';
+    
+    // Mostrar según selección
+    if (tipoProyecto === 'Diseño 3D') {
+        camposDiseno.style.display = 'block';
+    } else if (tipoProyecto === 'Software') {
+        camposSoftware.style.display = 'block';
+    }
+}
+</script>
+
+<!-- 
+==============================================
+INSTRUCCIONES ADICIONALES
+==============================================
+
+1. CONFIGURACIÓN DEL EMAIL:
+   - El formulario envía a: isasiapp2023@gmail.com
+   - Usa el servicio gratuito FormSubmit.co
+   - NO requiere registro previo
+   - La primera vez, recibirás un email de confirmación en isasiapp2023@gmail.com
+   - Click en el link de confirmación para activar
+   - Después funciona automáticamente
+
+2. PERSONALIZAR EMAIL DESTINO:
+   - Cambia "isasiapp2023@gmail.com" en la línea 50:
+     action="https://formsubmit.co/TU_NUEVO_EMAIL"
+
+3. REDIRECCIÓN DESPUÉS DE ENVIAR:
+   - Actualmente vuelve a la misma página
+   - Para crear página de "Gracias":
+     * Crea página WordPress: "Gracias por contactarnos"
+     * Añade este campo oculto después de la línea 54:
+       <input type="hidden" name="_next" value="https://isasilab3d.com/gracias">
+
+4. LÍMITE DE ARCHIVOS:
+   - Máximo 10MB por archivo
+   - Máximo 3 archivos simultáneos
+   - Si necesitas más, usa WeTransfer y pide el link en descripción
+
+5. PERSONALIZAR CAMPOS:
+   - Añadir campo: Copia un <div> existente y cambia name=""
+   - Quitar campo: Elimina el <div> completo
+   - Campo obligatorio: añade required al input
+
+6. COLORES (ya usa BizBoost):
+   - Fondo formulario: #222222
+   - Inputs: #1a1a1a
+   - Bordes: #323438
+   - Focus: #2292b1
+   - Botón: Gradiente #1b3385 → #25c5c9
+
+7. ANTI-SPAM:
+   - Ya incluye honey pot (_honey)
+   - Ya incluye captcha desactivado (_captcha: false)
+   - FormSubmit tiene protección automática
+
+8. PRUEBA ANTES DE PUBLICAR:
+   - Envía un formulario de prueba
+   - Verifica que llega a isasiapp2023@gmail.com
+   - Confirma activación (solo primera vez)
+   - Comprueba que adjuntos llegan correctamente
+
+==============================================
+-->
