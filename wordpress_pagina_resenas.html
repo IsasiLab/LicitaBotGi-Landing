@@ -1,0 +1,630 @@
+<!-- ============================================= -->
+<!-- PÁGINA RESEÑAS ISASILAB - ESTILO BIZBOOST -->
+<!-- Sistema de reseñas de clientes              -->
+<!-- Autor: IsasiLab                             -->
+<!-- Fecha: Febrero 2026                         -->
+<!-- ============================================= -->
+
+<style>
+/* Estilos base página reseñas - BizBoost */
+.resenas-isasilab {
+    background: #0A0C11;
+    min-height: 100vh;
+    padding: 80px 20px 60px;
+    font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+.resenas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header reseñas */
+.resenas-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.resenas-header h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    background: linear-gradient(to right, #1b3385 0%, #25c5c9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.resenas-header p {
+    font-size: 1.3rem;
+    color: #cccccc;
+    letter-spacing: 1px;
+}
+
+/* Formulario nueva reseña */
+.nueva-resena-box {
+    background: #222222;
+    border: 2px solid #323438;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-out;
+    transition: all 0.3s ease;
+}
+
+.nueva-resena-box:hover {
+    border-color: #2292b1;
+    box-shadow: 0 10px 30px rgba(34, 146, 177, 0.2);
+}
+
+.nueva-resena-box h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #25c5c9;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: #1a1a1a;
+    border: 2px solid #323438;
+    border-radius: 8px;
+    padding: 15px;
+    color: #ffffff;
+    font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2292b1;
+    box-shadow: 0 0 15px rgba(34, 146, 177, 0.3);
+    background: #0f0f0f;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Sistema de estrellas */
+.rating-group {
+    margin-bottom: 25px;
+}
+
+.rating-group label {
+    display: block;
+    color: #25c5c9;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.stars {
+    display: flex;
+    gap: 10px;
+    font-size: 2.5rem;
+}
+
+.star {
+    cursor: pointer;
+    color: #323438;
+    transition: all 0.3s ease;
+}
+
+.star:hover,
+.star.active {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+
+.btn-enviar {
+    background: linear-gradient(to right, #1b3385 0%, #25c5c9 100%);
+    color: #ffffff;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    display: block;
+    margin: 30px auto 0;
+    box-shadow: 0 5px 20px rgba(37, 197, 201, 0.3);
+}
+
+.btn-enviar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(37, 197, 201, 0.5);
+}
+
+/* Lista de reseñas */
+.resenas-lista {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.resenas-titulo {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.resena-item {
+    background: #222222;
+    border: 2px solid #323438;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.resena-item:hover {
+    border-color: #2292b1;
+    box-shadow: 0 5px 25px rgba(34, 146, 177, 0.2);
+    transform: translateX(5px);
+}
+
+.resena-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #323438;
+}
+
+.resena-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resena-autor {
+    font-size: 1.3rem;
+    color: #25c5c9;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.resena-estrellas {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+.resena-fecha {
+    font-size: 0.9rem;
+    color: #999999;
+    letter-spacing: 1px;
+}
+
+.resena-contenido {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Respuesta de IsasiLab */
+.respuesta-isasilab {
+    background: linear-gradient(135deg, rgba(27, 51, 133, 0.2) 0%, rgba(37, 197, 201, 0.1) 100%);
+    border-left: 4px solid #2292b1;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.respuesta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.respuesta-badge {
+    background: linear-gradient(to right, #1b3385 0%, #25c5c9 100%);
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.respuesta-autor {
+    color: #25c5c9;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.respuesta-contenido {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Badges de estado */
+.estado-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.badge-nueva {
+    background: #2292b1;
+    color: #ffffff;
+}
+
+.badge-respondida {
+    background: rgba(37, 197, 201, 0.2);
+    color: #25c5c9;
+    border: 1px solid #25c5c9;
+}
+
+/* Botón volver */
+.btn-volver {
+    display: inline-block;
+    background: #222222;
+    border: 2px solid #2292b1;
+    color: #25c5c9;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.btn-volver:hover {
+    background: #2292b1;
+    color: #ffffff;
+    transform: translateX(-5px);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mensaje vacío */
+.sin-resenas {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(34, 34, 34, 0.5);
+    border: 2px dashed #323438;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.sin-resenas-icono {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.sin-resenas-texto {
+    font-size: 1.5rem;
+    color: #cccccc;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resenas-header h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .resenas-header p {
+        font-size: 1rem;
+    }
+    
+    .nueva-resena-box {
+        padding: 25px;
+    }
+    
+    .resena-item {
+        padding: 20px;
+    }
+    
+    .resena-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+</style>
+
+<div class="resenas-isasilab">
+    <div class="resenas-container">
+        
+        <!-- Botón volver -->
+        <a href="/" class="btn-volver">← VOLVER AL INICIO</a>
+        
+        <!-- Header -->
+        <div class="resenas-header">
+            <h1>⭐ RESEÑAS ISASILAB</h1>
+            <p>Tu opinión nos ayuda a seguir mejorando</p>
+        </div>
+        
+        <!-- Formulario nueva reseña -->
+        <div class="nueva-resena-box">
+            <h2>Escribe tu Reseña</h2>
+            
+            <form id="formResena" action="TU_SCRIPT_BACKEND_AQUI" method="POST">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                
+                <div class="rating-group">
+                    <label>Valoración</label>
+                    <div class="stars" id="rating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating-value" name="rating" value="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="titulo">Título de tu experiencia</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Resumen breve..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario">Tu Experiencia</label>
+                    <textarea id="comentario" name="comentario" placeholder="Cuéntanos tu experiencia con nuestros servicios..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">ENVIAR RESEÑA</button>
+                
+            </form>
+        </div>
+        
+        <!-- Lista de reseñas -->
+        <div class="resenas-lista">
+            
+            <h2 class="resenas-titulo">Reseñas de Clientes</h2>
+            
+            <!-- Reseña ejemplo 1 (con respuesta) -->
+            <div class="resena-item">
+                <div class="resena-header">
+                    <div class="resena-info">
+                        <span class="resena-autor">👤 Carlos Martínez</span>
+                        <div class="resena-estrellas">★★★★★</div>
+                        <span class="estado-badge badge-respondida">✓ RESPONDIDA</span>
+                    </div>
+                    <span class="resena-fecha">📅 2026-02-05</span>
+                </div>
+                <div class="resena-contenido">
+                    <strong>💼 "Excelente servicio con LicitaBotGi"</strong><br><br>
+                    Contraté LicitaBotGi hace 2 meses y ha sido una inversión excelente. El sistema me avisa automáticamente de todas las licitaciones relevantes. He conseguido 3 contratos gracias a las alertas tempranas. El soporte técnico responde en menos de 24h. Totalmente recomendado para empresas que licitan frecuentemente.
+                </div>
+                
+                <!-- Respuesta de IsasiLab -->
+                <div class="respuesta-isasilab">
+                    <div class="respuesta-header">
+                        <span class="respuesta-badge">ISASILAB</span>
+                        <span class="respuesta-autor">Respuesta oficial</span>
+                    </div>
+                    <div class="respuesta-contenido">
+                        ¡Muchas gracias Carlos! 🎉 Me alegra enormemente saber que LicitaBotGi te está ayudando a conseguir contratos. Ese es exactamente el objetivo: automatizar la búsqueda para que puedas centrarte en preparar las propuestas. Si necesitas cualquier mejora o tienes ideas, no dudes en escribirme. ¡A por más licitaciones! 🚀
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reseña ejemplo 2 (sin respuesta) -->
+            <div class="resena-item">
+                <div class="resena-header">
+                    <div class="resena-info">
+                        <span class="resena-autor">👤 María López</span>
+                        <div class="resena-estrellas">★★★★★</div>
+                        <span class="estado-badge badge-nueva">🆕 NUEVA</span>
+                    </div>
+                    <span class="resena-fecha">📅 2026-02-08</span>
+                </div>
+                <div class="resena-contenido">
+                    <strong>🎨 "Litofanía perfecta para regalo"</strong><br><br>
+                    Encargué una litofanía de una foto familiar y quedó espectacular. La calidad de impresión es muy buena y el tiempo de entrega fue rápido. El servicio de asesoramiento previo también fue excelente, me explicaron todo el proceso. Lo recomendaré a mis amigos.
+                </div>
+            </div>
+            
+            <!-- Reseña ejemplo 3 (con respuesta) -->
+            <div class="resena-item">
+                <div class="resena-header">
+                    <div class="resena-info">
+                        <span class="resena-autor">👤 David Ruiz</span>
+                        <div class="resena-estrellas">★★★★☆</div>
+                        <span class="estado-badge badge-respondida">✓ RESPONDIDA</span>
+                    </div>
+                    <span class="resena-fecha">📅 2026-02-01</span>
+                </div>
+                <div class="resena-contenido">
+                    <strong>💻 "FacturaeManager muy útil"</strong><br><br>
+                    FacturaeManager me ha ahorrado muchas horas de trabajo. Antes hacía las facturas XML manualmente y era un caos. Ahora solo relleno los campos y el programa genera todo correctamente. El único "pero" es que me gustaría poder personalizar más la plantilla del PDF, pero para el precio que tiene (25€) está genial.
+                </div>
+                
+                <div class="respuesta-isasilab">
+                    <div class="respuesta-header">
+                        <span class="respuesta-badge">ISASILAB</span>
+                        <span class="respuesta-autor">Respuesta oficial</span>
+                    </div>
+                    <div class="respuesta-contenido">
+                        ¡Gracias David! 😊 Tu feedback sobre las plantillas PDF es muy valioso. Lo anoto para la próxima actualización (v1.1). Mientras tanto, si tienes algún diseño específico que necesites, mándame un email y veo cómo ayudarte. El objetivo es que te ahorre tiempo, me alegra que lo esté cumpliendo. 💚
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mensaje si no hay reseñas (ocultar cuando haya) -->
+            <!--
+            <div class="sin-resenas">
+                <div class="sin-resenas-icono">⭐</div>
+                <div class="sin-resenas-texto">
+                    Aún no hay reseñas<br>
+                    Sé el primero en compartir tu experiencia
+                </div>
+            </div>
+            -->
+            
+        </div>
+        
+    </div>
+</div>
+
+<script>
+// Sistema de estrellas interactivo
+const stars = document.querySelectorAll('.star');
+const ratingInput = document.getElementById('rating-value');
+
+stars.forEach(star => {
+    star.addEventListener('click', function() {
+        const value = this.getAttribute('data-value');
+        ratingInput.value = value;
+        
+        // Reset todas las estrellas
+        stars.forEach(s => s.classList.remove('active'));
+        
+        // Activar estrellas hasta la seleccionada
+        for (let i = 0; i < value; i++) {
+            stars[i].classList.add('active');
+        }
+    });
+    
+    // Efecto hover
+    star.addEventListener('mouseenter', function() {
+        const value = this.getAttribute('data-value');
+        for (let i = 0; i < value; i++) {
+            stars[i].style.color = '#ffd700';
+        }
+    });
+});
+
+// Reset hover al salir
+document.getElementById('rating').addEventListener('mouseleave', function() {
+    const currentRating = ratingInput.value;
+    stars.forEach((s, i) => {
+        if (i < currentRating) {
+            s.style.color = '#ffd700';
+        } else {
+            s.style.color = '#323438';
+        }
+    });
+});
+
+// Validación del formulario
+document.getElementById('formResena').addEventListener('submit', function(e) {
+    const rating = ratingInput.value;
+    if (rating === '0') {
+        e.preventDefault();
+        alert('Por favor, selecciona una valoración de estrellas');
+        return false;
+    }
+    
+    // Si no tienes backend, puedes hacer que envíe por email
+    // o integrar con un servicio como Formspree, Google Forms, etc.
+    
+    // Ejemplo comentado:
+    // e.preventDefault();
+    // alert('¡Reseña enviada! Gracias por tu feedback.');
+    // this.reset();
+});
+</script>
+
+<!-- 
+INSTRUCCIONES DE USO:
+========================
+
+1. BACKEND / FORMULARIO:
+   - Opción A: Plugin WordPress (WP Customer Reviews, Reviews Plugin)
+   - Opción B: Servicio externo (Trustpilot, Google Reviews)
+   - Opción C: Script PHP + Base de datos MySQL
+
+2. GESTIÓN DE RESEÑAS:
+   - Los ejemplos son HTML estático
+   - Para hacerlo dinámico, necesitas base de datos
+   - O usar sistema de comentarios WordPress modificado
+
+3. SISTEMA DE ESTRELLAS:
+   - JavaScript ya incluido (funcional)
+   - Valor se guarda en campo oculto "rating"
+
+4. NOTIFICACIONES:
+   - Configurar email cuando llegue nueva reseña
+   - Webhook, Zapier, o script PHP
+
+5. MODERACIÓN:
+   - Panel admin para aprobar/responder reseñas
+   - O responder manualmente editando HTML
+
+6. CAMBIAR ACTION DEL FORM:
+   - Línea 372: action="TU_SCRIPT_BACKEND_AQUI"
+   - Cambiar por tu URL de procesamiento
+
+EJEMPLO FORMSPREE (gratis):
+   action="https://formspree.io/f/TU_ID_AQUI"
+   
+EJEMPLO GOOGLE FORMS:
+   Exportar form de Google Forms e integrar aquí
+
+PERSONALIZACIÓN:
+   - Colores BizBoost: #0A0C11, #2292b1, #25c5c9
+   - Fuente: Poppins (ya configurada)
+   - Gradientes: #1b3385 a #25c5c9
+-->
