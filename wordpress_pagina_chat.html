@@ -1,0 +1,516 @@
+<!-- ============================================= -->
+<!-- PÁGINA CHAT ISASILAB - ESTILO MATRIX GREEN -->
+<!-- Sistema de comentarios y respuestas         -->
+<!-- Autor: IsasiLab                             -->
+<!-- Fecha: Febrero 2026                         -->
+<!-- ============================================= -->
+
+<style>
+/* Estilos base página chat */
+.chat-isasilab {
+    background: linear-gradient(135deg, #000000 0%, #001a00 100%);
+    min-height: 100vh;
+    padding: 80px 20px 60px;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+}
+
+.chat-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header chat */
+.chat-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.chat-header h1 {
+    font-size: 3.5rem;
+    color: #00ff00;
+    text-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.chat-header p {
+    font-size: 1.3rem;
+    color: #00cc00;
+    letter-spacing: 2px;
+}
+
+/* Formulario nuevo mensaje */
+.nuevo-mensaje-box {
+    background: rgba(0, 10, 0, 0.9);
+    border: 3px solid #00ff00;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.nuevo-mensaje-box h2 {
+    font-size: 2rem;
+    color: #00ff00;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #00ff00;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #00ff00;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.form-group label::before {
+    content: '> ';
+    color: #00ff00;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    padding: 15px;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    background: rgba(0, 20, 0, 0.8);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-enviar {
+    background: #00ff00;
+    color: #000000;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.btn-enviar:hover {
+    background: #00cc00;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
+}
+
+/* Lista de comentarios */
+.comentarios-lista {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.comentarios-titulo {
+    font-size: 2.5rem;
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px #00ff00;
+    letter-spacing: 3px;
+}
+
+.comentario-item {
+    background: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.comentario-item:hover {
+    border-color: #00ff00;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
+    transform: translateX(10px);
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.comentario-autor {
+    font-size: 1.3rem;
+    color: #00ff00;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.comentario-fecha {
+    font-size: 0.9rem;
+    color: #009900;
+    letter-spacing: 1px;
+}
+
+.comentario-contenido {
+    color: #00cc00;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Respuesta de IsasiLab */
+.respuesta-isasilab {
+    background: rgba(0, 40, 0, 0.6);
+    border-left: 4px solid #00ff00;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.respuesta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.respuesta-badge {
+    background: #00ff00;
+    color: #000000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.respuesta-autor {
+    color: #00ff00;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.respuesta-contenido {
+    color: #00ff00;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Badges de estado */
+.estado-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 15px;
+}
+
+.badge-nuevo {
+    background: #00ff00;
+    color: #000000;
+}
+
+.badge-respondido {
+    background: rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+/* Botón volver */
+.btn-volver {
+    display: inline-block;
+    background: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.btn-volver:hover {
+    background: #00ff00;
+    color: #000000;
+    transform: translateX(-5px);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mensaje vacío */
+.sin-comentarios {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 10, 0, 0.5);
+    border: 2px dashed #00ff00;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.sin-comentarios-icono {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.sin-comentarios-texto {
+    font-size: 1.5rem;
+    color: #00cc00;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chat-header h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .chat-header p {
+        font-size: 1rem;
+    }
+    
+    .nuevo-mensaje-box {
+        padding: 25px;
+    }
+    
+    .comentario-item {
+        padding: 20px;
+    }
+    
+    .comentario-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+</style>
+
+<div class="chat-isasilab">
+    <div class="chat-container">
+        
+        <!-- Botón volver -->
+        <a href="/" class="btn-volver">← VOLVER AL INICIO</a>
+        
+        <!-- Header -->
+        <div class="chat-header">
+            <h1>💬 CHAT ISASILAB</h1>
+            <p>> PREGUNTAS _ SUGERENCIAS _ FEEDBACK _ SOPORTE</p>
+        </div>
+        
+        <!-- Formulario nuevo mensaje -->
+        <div class="nuevo-mensaje-box">
+            <h2>[ NUEVO MENSAJE ]</h2>
+            
+            <form id="formComentario" action="TU_SCRIPT_BACKEND_AQUI" method="POST">
+                
+                <div class="form-group">
+                    <label for="nombre">NOMBRE</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asunto">ASUNTO</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="¿Sobre qué quieres hablar?" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensaje">MENSAJE</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">[ ENVIAR MENSAJE ]</button>
+                
+            </form>
+        </div>
+        
+        <!-- Lista de comentarios -->
+        <div class="comentarios-lista">
+            
+            <h2 class="comentarios-titulo">[ MENSAJES RECIENTES ]</h2>
+            
+            <!-- Comentario ejemplo 1 (con respuesta) -->
+            <div class="comentario-item">
+                <div class="comentario-header">
+                    <div>
+                        <span class="comentario-autor">👤 Usuario Ejemplo</span>
+                        <span class="estado-badge badge-respondido">✓ RESPONDIDO</span>
+                    </div>
+                    <span class="comentario-fecha">📅 2026-02-08 15:30</span>
+                </div>
+                <div class="comentario-contenido">
+                    <strong>💡 Asunto: Pregunta sobre LicitaBotGi</strong><br><br>
+                    Hola, me gustaría saber si LicitaBotGi funciona con contratos menores o solo con licitaciones completas. ¿Incluye alertas automáticas?
+                </div>
+                
+                <!-- Respuesta de IsasiLab -->
+                <div class="respuesta-isasilab">
+                    <div class="respuesta-header">
+                        <span class="respuesta-badge">ISASILAB</span>
+                        <span class="respuesta-autor">Respuesta oficial</span>
+                    </div>
+                    <div class="respuesta-contenido">
+                        Hola! LicitaBotGi funciona con todo tipo de contratos (mayores, menores, acuerdos marco). Incluye alertas por email configurables. El sistema monitoriza 24/7 y te avisa cuando aparece algo que cumple tus criterios. ¡Cualquier duda más, escríbeme! 🚀
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comentario ejemplo 2 (sin respuesta) -->
+            <div class="comentario-item">
+                <div class="comentario-header">
+                    <div>
+                        <span class="comentario-autor">👤 Otro Usuario</span>
+                        <span class="estado-badge badge-nuevo">🆕 NUEVO</span>
+                    </div>
+                    <span class="comentario-fecha">📅 2026-02-09 10:15</span>
+                </div>
+                <div class="comentario-contenido">
+                    <strong>💡 Asunto: Diseños 3D personalizados</strong><br><br>
+                    ¿Podéis hacer litofanías a partir de fotos familiares? ¿Cuánto tardaríais?
+                </div>
+            </div>
+            
+            <!-- Comentario ejemplo 3 (con respuesta) -->
+            <div class="comentario-item">
+                <div class="comentario-header">
+                    <div>
+                        <span class="comentario-autor">👤 María López</span>
+                        <span class="estado-badge badge-respondido">✓ RESPONDIDO</span>
+                    </div>
+                    <span class="comentario-fecha">📅 2026-02-07 18:45</span>
+                </div>
+                <div class="comentario-contenido">
+                    <strong>💡 Asunto: FacturaeManager soporte</strong><br><br>
+                    Tengo un problema con la validación de XML, ¿hay soporte técnico incluido?
+                </div>
+                
+                <div class="respuesta-isasilab">
+                    <div class="respuesta-header">
+                        <span class="respuesta-badge">ISASILAB</span>
+                        <span class="respuesta-autor">Respuesta oficial</span>
+                    </div>
+                    <div class="respuesta-contenido">
+                        Hola María! Los primeros 3 meses de soporte están incluidos (vía email + GitHub). Para validación XML, asegúrate de usar la versión 3.2 de Facturae. Te envío un email con pasos detallados. Cualquier cosa, me comentas! 💚
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mensaje si no hay comentarios (ocultar cuando haya) -->
+            <!--
+            <div class="sin-comentarios">
+                <div class="sin-comentarios-icono">💬</div>
+                <div class="sin-comentarios-texto">
+                    > AÚN NO HAY MENSAJES<br>
+                    > SÉ EL PRIMERO EN ESCRIBIR
+                </div>
+            </div>
+            -->
+            
+        </div>
+        
+    </div>
+</div>
+
+<script>
+// Script básico para validación del formulario
+document.getElementById('formComentario').addEventListener('submit', function(e) {
+    // Si no tienes backend, puedes hacer que envíe por email
+    // o integrar con un servicio como Formspree, Google Forms, etc.
+    
+    // Ejemplo comentado:
+    // e.preventDefault();
+    // alert('Mensaje enviado! Te responderé pronto.');
+    // this.reset();
+});
+</script>
+
+<!-- 
+INSTRUCCIONES DE USO:
+========================
+
+1. BACKEND / FORMULARIO:
+   - Opción A: Integrar con plugin WordPress (Contact Form 7, WPForms)
+   - Opción B: Usar servicio externo (Formspree.io, Google Forms)
+   - Opción C: Crear script PHP personalizado
+
+2. GESTIÓN DE COMENTARIOS:
+   - Los comentarios ejemplo son HTML estático
+   - Para hacerlo dinámico, necesitas base de datos (MySQL, etc.)
+   - O usar sistema de comentarios WordPress
+
+3. NOTIFICACIONES:
+   - Configurar email cuando llegue nuevo mensaje
+   - Puedes usar webhook, Zapier, o script PHP simple
+
+4. MODERACIÓN:
+   - Añadir panel admin para aprobar/responder mensajes
+   - O responder manualmente editando el HTML
+
+5. CAMBIAR ACTION DEL FORM:
+   - Línea 176: action="TU_SCRIPT_BACKEND_AQUI"
+   - Cambiar por tu URL de procesamiento
+
+EJEMPLO FORMSPREE (gratis):
+   action="https://formspree.io/f/TU_ID_AQUI"
+   
+EJEMPLO GOOGLE FORMS:
+   Exportar form de Google Forms e integrar aquí
+-->
