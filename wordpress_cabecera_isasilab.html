@@ -12,7 +12,7 @@
     padding: 0;
     margin: 0 auto;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
     border-bottom: 5px solid #00ff00;
     box-shadow: 0 10px 50px rgba(0, 255, 0, 0.3);
 }
@@ -25,6 +25,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: visible;
 }
 
 .cabecera-overlay {
@@ -117,14 +118,35 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    background: rgba(0, 10, 0, 0.95);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 10, 0, 0.98);
     border: 2px solid #00ff00;
     border-radius: 5px;
-    min-width: 200px;
+    min-width: 220px;
+    max-height: 250px;
+    overflow-y: auto;
     box-shadow: 0 8px 30px rgba(0, 255, 0, 0.4);
-    z-index: 1000;
+    z-index: 9999;
     margin-top: 5px;
+}
+
+.dropdown-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: rgba(0, 50, 0, 0.3);
+    border-radius: 5px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 5px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: #00cc00;
 }
 
 .menu-dropdown.active .dropdown-content {
@@ -331,15 +353,37 @@
                     <a href="/" class="menu-item">[ HOME ]</a>
                     
                     <!-- Dropdown Software -->
-                    <div class="menu-dropdown" onclick="this.classList.toggle('active')">
+                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)">
                         <span class="menu-item">[ SOFTWARE ▼ ]</span>
                         <div class="dropdown-content">
-                            <a href="/licitabotgi-2" class="dropdown-item">> LicitaBotGi</a>
-                            <a href="/facturaemanager" class="dropdown-item">> FacturaeManager</a>
+                            <a href="/licitabotgi-2" class="dropdown-item">📋 LicitaBotGi</a>
+                            <a href="/facturaemanager" class="dropdown-item">💼 FacturaeManager</a>
                         </div>
                     </div>
                     
-                    <a href="/modelos-3d" class="menu-item">[ MODELOS 3D ]</a>
+                    <!-- Dropdown Diseño 3D -->
+                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)">
+                        <span class="menu-item">[ DISEÑO 3D ▼ ]</span>
+                        <div class="dropdown-content">
+                            <a href="/modelos-3d" class="dropdown-item">🎨 Modelos 3D</a>
+                            <a href="/modelos-3d" class="dropdown-item">🖨️ Impresión 3D</a>
+                            <a href="/modelos-3d" class="dropdown-item">📸 Litofanías</a>
+                            <a href="/modelos-3d" class="dropdown-item">🏥 DICOM Médico</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dropdown Cloud -->
+                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)">
+                        <span class="menu-item">[ CLOUD ▼ ]</span>
+                        <div class="dropdown-content">
+                            <a href="/solicitudes" class="dropdown-item">☁️ Microsoft 365</a>
+                            <a href="/solicitudes" class="dropdown-item">👥 Teams + SharePoint</a>
+                            <a href="/solicitudes" class="dropdown-item">⚡ Power Automate</a>
+                            <a href="/solicitudes" class="dropdown-item">📊 Power BI</a>
+                            <a href="/solicitudes" class="dropdown-item">🔄 Migración Cloud</a>
+                        </div>
+                    </div>
+                    
                     <a href="/solicitudes" class="menu-item">[ SOLICITUDES ]</a>
                 </div>
                 
@@ -393,11 +437,29 @@
 </div>
 
 <script>
+// Función mejorada para toggle dropdown
+function toggleDropdown(event, element) {
+    event.stopPropagation();
+    
+    // Cerrar otros dropdowns
+    const allDropdowns = document.querySelectorAll('.menu-dropdown');
+    allDropdowns.forEach(dropdown => {
+        if (dropdown !== element) {
+            dropdown.classList.remove('active');
+        }
+    });
+    
+    // Toggle actual
+    element.classList.toggle('active');
+}
+
 // Cerrar dropdown si se hace click fuera
 document.addEventListener('click', function(event) {
-    const dropdown = document.querySelector('.menu-dropdown');
-    if (dropdown && !dropdown.contains(event.target)) {
-        dropdown.classList.remove('active');
-    }
+    const dropdowns = document.querySelectorAll('.menu-dropdown');
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
 });
 </script>
