@@ -127,7 +127,7 @@
     margin-top: 5px;
 }
 
-.menu-dropdown:hover .dropdown-content {
+.menu-dropdown.active .dropdown-content {
     display: block;
 }
 
@@ -331,7 +331,7 @@
                     <a href="/" class="menu-item">[ HOME ]</a>
                     
                     <!-- Dropdown Software -->
-                    <div class="menu-dropdown">
+                    <div class="menu-dropdown" onclick="this.classList.toggle('active')">
                         <span class="menu-item">[ SOFTWARE ▼ ]</span>
                         <div class="dropdown-content">
                             <a href="/licitabotgi-2" class="dropdown-item">> LicitaBotGi</a>
@@ -391,3 +391,13 @@
         </div>
     </div>
 </div>
+
+<script>
+// Cerrar dropdown si se hace click fuera
+document.addEventListener('click', function(event) {
+    const dropdown = document.querySelector('.menu-dropdown');
+    if (dropdown && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+    }
+});
+</script>
