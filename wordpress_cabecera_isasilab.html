@@ -20,7 +20,7 @@
 .cabecera-bg {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 300px;
     background-image: url('https://raw.githubusercontent.com/IsasiLab/FacturaeManager-Landing/main/IsasiLab3D.jpg');
     background-size: cover;
     background-position: center;
@@ -42,12 +42,12 @@
 .cabecera-content {
     text-align: center;
     max-width: 1200px;
-    padding: 40px;
+    padding: 20px;
     animation: glitchIn 1.5s ease-out;
 }
 
 .cabecera-logo {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 900;
     font-family: 'Courier New', monospace;
     color: #00ff00;
@@ -63,20 +63,47 @@
 }
 
 .cabecera-tagline {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-family: 'Courier New', monospace;
     color: #00ff00;
     text-shadow: 0 0 10px #00ff00;
-    margin-bottom: 40px;
-    letter-spacing: 3px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
     font-weight: 400;
 }
 
+/* Menú de navegación */
+.cabecera-menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    background: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #00ff00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.menu-item:hover {
+    background: #00ff00;
+    color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.5);
+}
+
 .cabecera-servicios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
+    display: none;
 }
 
 .servicio-matrix {
@@ -209,16 +236,26 @@
 
 @media (max-width: 768px) {
     .cabecera-bg {
-        height: 400px;
+        height: 250px;
     }
     
     .cabecera-logo {
-        font-size: 2.5rem;
-        letter-spacing: 5px;
+        font-size: 2rem;
+        letter-spacing: 3px;
     }
     
     .cabecera-tagline {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .cabecera-menu {
+        gap: 5px;
+    }
+    
+    .menu-item {
+        padding: 8px 15px;
+        font-size: 0.85rem;
     }
 }
 </style>
@@ -238,7 +275,16 @@
                     > DISEÑO 3D _ SOFTWARE _ CLOUD _ AUTOMATIZACIÓN
                 </div>
                 
-                <!-- Servicios -->
+                <!-- Menú de navegación -->
+                <div class="cabecera-menu">
+                    <a href="/" class="menu-item">[ HOME ]</a>
+                    <a href="/licitabotgi-2" class="menu-item">[ LICITABOTGI ]</a>
+                    <a href="/facturaemanager" class="menu-item">[ FACTURAEMANAGER ]</a>
+                    <a href="/modelos-3d" class="menu-item">[ MODELOS 3D ]</a>
+                    <a href="/solicitudes" class="menu-item">[ SOLICITUDES ]</a>
+                </div>
+                
+                <!-- Servicios (ocultos ahora) -->
                 <div class="cabecera-servicios">
                     
                     <!-- Diseño 3D -->
