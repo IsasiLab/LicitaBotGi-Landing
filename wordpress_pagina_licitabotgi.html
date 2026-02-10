@@ -1,0 +1,539 @@
+<!-- ============================================ -->
+<!-- PÁGINA COMPLETA LICITABOTGI PARA WORDPRESS -->
+<!-- Tema: BizBoost Dark                         -->
+<!-- Autor: IsasiLab                             -->
+<!-- Fecha: Febrero 2026                         -->
+<!-- ============================================ -->
+
+<style>
+.licitabotgi-page {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0A0C11 0%, #1a1d29 100%);
+    color: #E0E0E0;
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.licitabotgi-header {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.licitabotgi-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(37, 197, 201, 0.3);
+}
+
+.licitabotgi-header .subtitle {
+    font-size: 1.4rem;
+    color: #25c5c9;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.licitabotgi-header .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #B0B0B0;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.precio-destacado {
+    display: inline-block;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 100%);
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding: 20px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(37, 197, 201, 0.4);
+    animation: pulse 2s infinite;
+}
+
+.precio-destacado .antes {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Sección de capturas */
+.capturas-section {
+    margin: 80px 0;
+}
+
+.capturas-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #25c5c9;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.captura-item {
+    background: #222222;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease-out;
+}
+
+.captura-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(37, 197, 201, 0.3);
+}
+
+.captura-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}
+
+.captura-item h3 {
+    font-size: 1.8rem;
+    color: #25c5c9;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.captura-item p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #C0C0C0;
+}
+
+/* Características principales */
+.caracteristicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.caracteristica-card {
+    background: #1a1d29;
+    border: 2px solid #25c5c9;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.caracteristica-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 197, 201, 0.4);
+    border-color: #1b3385;
+}
+
+.caracteristica-card .icono {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.caracteristica-card h3 {
+    font-size: 1.5rem;
+    color: #25c5c9;
+    margin-bottom: 15px;
+}
+
+.caracteristica-card p {
+    font-size: 1rem;
+    color: #B0B0B0;
+    line-height: 1.6;
+}
+
+/* Funcionalidades detalladas */
+.funcionalidades-section {
+    margin: 80px 0;
+}
+
+.funcionalidades-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #25c5c9;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.funcionalidad-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.funcionalidad-item {
+    background: linear-gradient(135deg, #1a1d29 0%, #0A0C11 100%);
+    border-left: 5px solid #25c5c9;
+    padding: 25px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.funcionalidad-item:hover {
+    border-left-color: #1b3385;
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(37, 197, 201, 0.3);
+}
+
+.funcionalidad-item h4 {
+    color: #25c5c9;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.funcionalidad-item p {
+    color: #B0B0B0;
+    line-height: 1.6;
+}
+
+/* Especificaciones técnicas */
+.especificaciones {
+    background: #1a1d29;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 60px 0;
+}
+
+.especificaciones h2 {
+    font-size: 2.2rem;
+    color: #25c5c9;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.spec-item {
+    background: #0A0C11;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(37, 197, 201, 0.2);
+}
+
+.spec-item strong {
+    color: #25c5c9;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.spec-item span {
+    color: #C0C0C0;
+}
+
+/* CTA Final */
+.cta-section {
+    text-align: center;
+    margin: 80px 0;
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #1b3385 0%, #25c5c9 100%);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(37, 197, 201, 0.4);
+}
+
+.cta-section h2 {
+    font-size: 2.8rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.cta-section p {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #1b3385;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 20px 60px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    background: #0A0C11;
+    color: #FFFFFF;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .licitabotgi-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .precio-destacado {
+        font-size: 2rem;
+        padding: 15px 35px;
+    }
+    
+    .caracteristicas-grid,
+    .funcionalidad-lista {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<div class="licitabotgi-page">
+    
+    <!-- Header -->
+    <div class="licitabotgi-header">
+        <h1>🤖 LicitaBotGi</h1>
+        <p class="subtitle">Sistema Inteligente de Gestión de Licitaciones con IA</p>
+        <p class="description">
+            Software profesional para empresas españolas que participan en contratación pública. 
+            Automatiza el análisis de licitaciones, extrae códigos CPV, genera propuestas técnicas 
+            y optimiza cálculos de precios con inteligencia artificial local. <strong>100% privado 
+            y sin costes adicionales.</strong>
+        </p>
+        <div class="precio-destacado">
+            <span class="antes">Antes 99€</span>
+            25€
+        </div>
+    </div>
+
+    <!-- Características principales -->
+    <div class="caracteristicas-grid">
+        <div class="caracteristica-card">
+            <div class="icono">🤖</div>
+            <h3>IA Local</h3>
+            <p>Modelo Phi-3.5-mini local. Sin conexión a internet, sin costes por uso, 100% privado.</p>
+        </div>
+        
+        <div class="caracteristica-card">
+            <div class="icono">📝</div>
+            <h3>Análisis PDF</h3>
+            <p>Extracción automática de datos de pliegos: presupuesto, CPVs, criterios, plazos.</p>
+        </div>
+        
+        <div class="caracteristica-card">
+            <div class="icono">💰</div>
+            <h3>Motor de Precios</h3>
+            <p>Cálculo optimizado con IVA, márgenes personalizables y detección de umbrales.</p>
+        </div>
+        
+        <div class="caracteristica-card">
+            <div class="icono">📊</div>
+            <h3>Base de Datos</h3>
+            <p>Historial completo de licitaciones con búsqueda avanzada y exportación Excel.</p>
+        </div>
+    </div>
+
+    <!-- Capturas de pantalla -->
+    <div class="capturas-section">
+        <h2>📸 Capturas del Sistema</h2>
+        
+        <div class="captura-item">
+            <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOTGI.jpg" alt="Dashboard LicitaBotGi">
+            <h3>🎯 Dashboard Principal</h3>
+            <p>
+                Panel central con vista completa de todas las licitaciones. Importa PDFs desde 
+                Licitaciones.es, PLACSP o cualquier fuente. Vista de tabla con filtros avanzados 
+                por estado (Activa, Ganada, Perdida), presupuesto, fechas y códigos CPV. Sistema 
+                de colores para identificación rápida del estado de cada oportunidad.
+            </p>
+        </div>
+
+        <div class="captura-item">
+            <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT1.jpg" alt="Extracción CPV">
+            <h3>🔍 Análisis y Extracción CPV</h3>
+            <p>
+                Motor de IA que analiza pliegos en formato PDF y extrae automáticamente los códigos 
+                CPV (Clasificación de Productos y Servicios). Identifica hasta 10 códigos por documento 
+                con sistema de confianza. Búsqueda inteligente en base de datos oficial de 9.295 códigos 
+                CPV con descripciones en español. Esencial para preparación de ofertas y estudios de mercado.
+            </p>
+        </div>
+
+        <div class="captura-item">
+            <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT2.jpg" alt="Generación de Propuestas">
+            <h3>✍️ Generador de Propuestas Técnicas</h3>
+            <p>
+                Sistema de generación de propuestas técnicas con IA especializada en contratación pública. 
+                Analiza pliego técnico, identifica requisitos clave y genera propuesta estructurada según 
+                criterios SARA (Servicios de Administración Pública). Personalización completa: tono formal/técnico, 
+                enfoque en experiencia/innovación, longitud ajustable. Exportación a Word y PDF para envío directo.
+            </p>
+        </div>
+
+        <div class="captura-item">
+            <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT3.jpg" alt="Motor de Precios">
+            <h3>💵 Motor de Cálculo de Precios</h3>
+            <p>
+                Sistema profesional de cálculo de ofertas económicas con:
+                <br>• <strong>Cálculo automático de IVA</strong> (4%, 10%, 21%) según tipo de servicio
+                <br>• <strong>Márgenes personalizables</strong> desde 5% hasta 100%
+                <br>• <strong>Detección de umbrales</strong> LCSP (40.000€ menor, 140.000€ tramitación urgente)
+                <br>• <strong>Vista dual</strong>: Base Imponible + IVA = Total Oferta
+                <br>• <strong>Recomendaciones inteligentes</strong> según competitividad del sector
+                <br>• <strong>Historial de ofertas</strong> para análisis de ratios ganados/perdidos
+            </p>
+        </div>
+    </div>
+
+    <!-- Funcionalidades detalladas -->
+    <div class="funcionalidades-section">
+        <h2>⚙️ Funcionalidades Completas</h2>
+        
+        <div class="funcionalidad-lista">
+            <div class="funcionalidad-item">
+                <h4>🤖 Inteligencia Artificial Local</h4>
+                <p>Modelo Phi-3.5-mini-instruct ejecutándose localmente. Sin necesidad de conexión a internet ni API keys. Análisis ilimitado sin costes recurrentes.</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>📄 Procesamiento PDF Avanzado</h4>
+                <p>Extracción de texto, tablas y metadatos de pliegos técnicos y administrativos. Compatible con PDFs escaneados (OCR integrado).</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>🔎 Base de Datos CPV Completa</h4>
+                <p>9.295 códigos CPV oficiales con descripciones en español. Búsqueda por palabra clave, código numérico o jerarquía. Exportación a Excel.</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>📊 Historial y Estadísticas</h4>
+                <p>Base de datos SQLite con todas las licitaciones procesadas. Métricas de éxito: % ganadas, ticket medio, sectores más rentables, tiempos de respuesta.</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>📈 Análisis de Rentabilidad</h4>
+                <p>Cálculo de ratio coste/beneficio por licitación. Alerta de márgenes bajos. Comparativa de ofertas anteriores en mismo sector.</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>🔔 Notificaciones Inteligentes</h4>
+                <p>Alertas de plazos de presentación. Recordatorios de documentación pendiente. Avisos de licitaciones similares a las ganadas.</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>📁 Gestión Documental</h4>
+                <p>Organización automática de pliegos, anexos, propuestas y ofertas. Versionado de documentos. Backup automático en la nube (opcional).</p>
+            </div>
+            
+            <div class="funcionalidad-item">
+                <h4>🔐 Seguridad y Privacidad</h4>
+                <p>Datos almacenados localmente. Sin telemetría ni seguimiento. Copia de seguridad cifrada. Compatible con RGPD.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Especificaciones técnicas -->
+    <div class="especificaciones">
+        <h2>🛠️ Especificaciones Técnicas</h2>
+        
+        <div class="specs-grid">
+            <div class="spec-item">
+                <strong>Sistema Operativo:</strong>
+                <span>Windows 10/11 (64 bits)</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>Requisitos mínimos:</strong>
+                <span>RAM 8GB, CPU Intel i5/Ryzen 5 o superior</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>Espacio en disco:</strong>
+                <span>2 GB (incluye modelo IA)</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>Lenguaje:</strong>
+                <span>Python 3.12+</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>Base de datos:</strong>
+                <span>SQLite 3.x</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>GUI:</strong>
+                <span>CustomTkinter 5.2+</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>Modelo IA:</strong>
+                <span>Microsoft Phi-3.5-mini-instruct (3.8B parámetros)</span>
+            </div>
+            
+            <div class="spec-item">
+                <strong>Licencia:</strong>
+                <span>Uso comercial permitido</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="cta-section">
+        <h2>¿Listo para optimizar tus licitaciones?</h2>
+        <p>Acceso inmediato al código fuente + instalador + 3 meses de soporte</p>
+        <a href="mailto:isasiapp2023@gmail.com?subject=Compra%20LicitaBotGi%2025€&body=Hola,%0A%0AQuiero%20comprar%20la%20licencia%20de%20LicitaBotGi%20por%2025€.%0A%0ANombre:%0AEmail:%0AEmpresa%20(opcional):%0A%0AGracias." class="cta-button">
+            💳 Comprar por 25€
+        </a>
+    </div>
+
+</div>
