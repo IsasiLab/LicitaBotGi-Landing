@@ -1,0 +1,352 @@
+<!-- ========================================= -->
+<!-- PÁGINA MODELOS 3D - GALERÍA Y DESCARGAS -->
+<!-- Intro + Fototeca + Descargas Gratis      -->
+<!-- Autor: IsasiLab                          -->
+<!-- Fecha: Febrero 2026                      -->
+<!-- ========================================= -->
+
+<style>
+.modelos3d-page {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0A0C11 0%, #1a1d29 100%);
+    color: #E0E0E0;
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.modelos3d-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.modelos3d-header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 50%, #cc5de8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.modelos3d-header .subtitle {
+    font-size: 1.6rem;
+    color: #f06595;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.modelos3d-header .intro {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: #B0B0B0;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(240, 101, 149, 0.05);
+    border-left: 5px solid #f06595;
+    padding: 30px 40px;
+    border-radius: 10px;
+}
+
+/* Secciones */
+.seccion-modelos {
+    margin: 80px 0;
+}
+
+.seccion-modelos h2 {
+    font-size: 2.8rem;
+    color: #f06595;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.seccion-modelos .descripcion {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #C0C0C0;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+/* Grid de categorías */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px 0;
+}
+
+.categoria-card {
+    background: linear-gradient(135deg, #1a1d29 0%, #0A0C11 100%);
+    border: 3px solid #f06595;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.categoria-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.categoria-card:hover::before {
+    opacity: 0.1;
+}
+
+.categoria-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(240, 101, 149, 0.5);
+}
+
+.categoria-card .icono {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.categoria-card h3 {
+    font-size: 1.8rem;
+    color: #f06595;
+    margin-bottom: 15px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.categoria-card p {
+    font-size: 1.1rem;
+    color: #B0B0B0;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+.categoria-card .badge {
+    display: inline-block;
+    background: #f06595;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón descarga */
+.btn-descarga {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 100%);
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 18px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(240, 101, 149, 0.4);
+    margin: 20px 10px;
+}
+
+.btn-descarga:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 60px rgba(240, 101, 149, 0.6);
+    background: #FFFFFF;
+    color: #f06595;
+}
+
+/* Fototeca */
+.fototeca-intro {
+    background: linear-gradient(135deg, #1a1d29 0%, #0A0C11 100%);
+    border-radius: 25px;
+    padding: 50px;
+    text-align: center;
+    margin: 80px 0;
+    border: 3px solid #cc5de8;
+}
+
+.fototeca-intro h2 {
+    font-size: 2.8rem;
+    color: #cc5de8;
+    margin-bottom: 30px;
+}
+
+.fototeca-intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #C0C0C0;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* CTA */
+.cta-modelos {
+    text-align: center;
+    margin: 80px 0;
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #f06595 50%, #cc5de8 100%);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(240, 101, 149, 0.5);
+}
+
+.cta-modelos h2 {
+    font-size: 2.8rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.cta-modelos p {
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modelos3d-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<div class="modelos3d-page">
+    
+    <!-- Header -->
+    <div class="modelos3d-header">
+        <h1>🎲 Modelos 3D</h1>
+        <p class="subtitle">Galería de Diseños | Descargas Gratuitas | Fototeca de Proyectos</p>
+        <div class="intro">
+            Bienvenido a mi <strong>galería de modelos 3D</strong>. Aquí encontrarás diseños listos para 
+            descargar de forma <strong>gratuita</strong>, así como una <strong>fototeca</strong> de proyectos 
+            reales completados. Todos los modelos están optimizados para <strong>impresión 3D FDM/SLA</strong> 
+            y disponibles en formato <strong>.STL</strong>. Si necesitas un diseño personalizado, 
+            <a href="/solicitudes" style="color: #f06595; font-weight: 700;">contáctame</a>.
+        </div>
+    </div>
+
+    <!-- Sección Descargas Gratis -->
+    <div class="seccion-modelos">
+        <h2>📂 Descargas Gratuitas</h2>
+        <p class="descripcion">
+            Colección de modelos 3D de uso libre para tu impresora 3D. Descarga directa en formato .STL. 
+            Nuevos diseños añadidos regularmente.
+        </p>
+        
+        <div class="categorias-grid">
+            <div class="categoria-card">
+                <div class="icono">🏠</div>
+                <h3>Hogar y Decoración</h3>
+                <p>Organizadores, soportes, macetas, porta-velas, adornos para el hogar.</p>
+                <span class="badge">12 modelos</span>
+            </div>
+            
+            <div class="categoria-card">
+                <div class="icono">🔧</div>
+                <h3>Herramientas y Utilidades</h3>
+                <p>Cajas de almacenaje, soportes para herramientas, adaptadores, clips.</p>
+                <span class="badge">8 modelos</span>
+            </div>
+            
+            <div class="categoria-card">
+                <div class="icono">🎨</div>
+                <h3>Arte y Creatividad</h3>
+                <p>Esculturas, figuritas, llaveros personalizados, pulseras articuladas.</p>
+                <span class="badge">15 modelos</span>
+            </div>
+            
+            <div class="categoria-card">
+                <div class="icono">🦎</div>
+                <h3>Animales Articulados</h3>
+                <p>Dragones, lagartijas, serpientes y otros animales con articulaciones móviles.</p>
+                <span class="badge">6 modelos</span>
+            </div>
+            
+            <div class="categoria-card">
+                <div class="icono">📐</div>
+                <h3>Piezas Funcionales</h3>
+                <p>Repuestos, engranajes, bisagras, conectores, adaptadores técnicos.</p>
+                <span class="badge">10 modelos</span>
+            </div>
+            
+            <div class="categoria-card">
+                <div class="icono">✨</div>
+                <h3>Especiales</h3>
+                <p>Litofanías, tratamiento DICOM, diseños por encargo liberados como open-source.</p>
+                <span class="badge">5 modelos</span>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <p style="font-size: 1.2rem; color: #C0C0C0; margin-bottom: 30px;">
+                📥 <strong>Todos los modelos disponibles para descarga inmediata</strong>
+            </p>
+            <p style="font-size: 1rem; color: #B0B0B0; margin-bottom: 30px;">
+                Los archivos .STL están optimizados para impresión FDM (Ender 3, Prusa, Anycubic) y SLA (resina). 
+                Sin necesidad de registro. Uso personal y comercial permitido.
+            </p>
+        </div>
+    </div>
+
+    <!-- Sección Fototeca -->
+    <div class="fototeca-intro">
+        <h2>📷 Fototeca de Proyectos</h2>
+        <p>
+            Galería de <strong>trabajos reales completados</strong> para clientes. Desde piezas funcionales 
+            hasta decoración personalizada. Cada proyecto incluye fotografías del proceso: modelado 3D, 
+            impresión, post-procesado y resultado final.
+        </p>
+        <p>
+            Categorías: <strong>Repuestos domésticos</strong> • <strong>Decoración personalizada</strong> • 
+            <strong>Litofanías</strong> • <strong>Piezas técnicas</strong> • <strong>DICOM médico</strong> • 
+            <strong>Animales articulados</strong>
+        </p>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="cta-modelos">
+        <h2>¿Necesitas un diseño personalizado?</h2>
+        <p>Cuéntame tu idea. Recibe tu modelo .STL en 24-48h. Diseños 100% únicos.</p>
+        <a href="/solicitudes" class="btn-descarga">
+            📧 Solicitar Diseño Personalizado
+        </a>
+        <a href="/" class="btn-descarga" style="background: #FFFFFF; color: #f06595;">
+            🏠 Volver al Inicio
+        </a>
+    </div>
+
+</div>

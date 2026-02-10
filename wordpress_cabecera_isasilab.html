@@ -1,0 +1,288 @@
+<!-- ============================================= -->
+<!-- CABECERA ISASILAB ESTILO MATRIX GREEN       -->
+<!-- Con imagen IsasiLab3D.jpg + Texto servicios -->
+<!-- Autor: IsasiLab                             -->
+<!-- Fecha: Febrero 2026                         -->
+<!-- ============================================= -->
+
+<style>
+.isasilab-cabecera {
+    position: relative;
+    background: #000000;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+    border-bottom: 5px solid #00ff00;
+    box-shadow: 0 10px 50px rgba(0, 255, 0, 0.3);
+}
+
+.cabecera-bg {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('https://raw.githubusercontent.com/IsasiLab/FacturaeManager-Landing/main/IsasiLab3D.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cabecera-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 50, 0, 0.75) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecera-content {
+    text-align: center;
+    max-width: 1200px;
+    padding: 40px;
+    animation: glitchIn 1.5s ease-out;
+}
+
+.cabecera-logo {
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    text-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00,
+        0 0 40px #00ff00,
+        2px 2px 0px #003300;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+    animation: textFlicker 3s infinite;
+}
+
+.cabecera-tagline {
+    font-size: 1.8rem;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.cabecera-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.servicio-matrix {
+    background: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-matrix::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ff00, #00cc00, #009900, #00ff00);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.servicio-matrix:hover::before {
+    opacity: 1;
+    animation: borderGlow 1.5s infinite;
+}
+
+.servicio-matrix:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 255, 0, 0.5);
+}
+
+.servicio-matrix .icono-matrix {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px #00ff00);
+}
+
+.servicio-matrix h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: #00ff00;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #00ff00;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.servicio-matrix p {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #00cc00;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+.servicio-matrix .badge-matrix {
+    display: inline-block;
+    background: #00ff00;
+    color: #000000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+/* Animaciones Matrix */
+@keyframes glitchIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes textFlicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 
+            0 0 10px #00ff00,
+            0 0 20px #00ff00,
+            0 0 30px #00ff00,
+            2px 2px 0px #003300;
+    }
+    50% {
+        opacity: 0.95;
+        text-shadow: 
+            0 0 5px #00ff00,
+            0 0 10px #00ff00,
+            2px 2px 0px #003300;
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .cabecera-servicios {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cabecera-logo {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecera-bg {
+        height: 400px;
+    }
+    
+    .cabecera-logo {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+    
+    .cabecera-tagline {
+        font-size: 1.2rem;
+    }
+}
+</style>
+
+<div class="isasilab-cabecera">
+    <div class="cabecera-bg">
+        <div class="cabecera-overlay">
+            <div class="cabecera-content">
+                
+                <!-- Logo -->
+                <div class="cabecera-logo">
+                    [ ISASILAB ]
+                </div>
+                
+                <!-- Tagline -->
+                <div class="cabecera-tagline">
+                    > DISEÑO 3D _ SOFTWARE _ CLOUD _ AUTOMATIZACIÓN
+                </div>
+                
+                <!-- Servicios -->
+                <div class="cabecera-servicios">
+                    
+                    <!-- Diseño 3D -->
+                    <div class="servicio-matrix">
+                        <div class="icono-matrix">🎲</div>
+                        <h3>[ DISEÑO 3D ]</h3>
+                        <p>
+                            > Modelado personalizado<br>
+                            > Impresión 3D disponible<br>
+                            > Litofanías + DICOM<br>
+                            > Archivos .STL optimizados
+                        </p>
+                        <span class="badge-matrix">DISPONIBLE</span>
+                    </div>
+                    
+                    <!-- Software -->
+                    <div class="servicio-matrix">
+                        <div class="icono-matrix">💻</div>
+                        <h3>[ SOFTWARE ]</h3>
+                        <p>
+                            > LicitaBotGi + IA local<br>
+                            > FacturaeManager XML<br>
+                            > Automatización empresas<br>
+                            > Código abierto
+                        </p>
+                        <span class="badge-matrix">25€ CADA UNO</span>
+                    </div>
+                    
+                    <!-- Cloud -->
+                    <div class="servicio-matrix">
+                        <div class="icono-matrix">☁️</div>
+                        <h3>[ CLOUD M365 ]</h3>
+                        <p>
+                            > Microsoft 365<br>
+                            > Teams + SharePoint<br>
+                            > Power Automate/BI<br>
+                            > Migración empresarial
+                        </p>
+                        <span class="badge-matrix">CONSULTAR</span>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
