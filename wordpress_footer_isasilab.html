@@ -16,12 +16,35 @@
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 100%;
+    padding: 0 40px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 40px;
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.footer-logo img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.6);
 }
 
 .footer-column h3 {
@@ -31,6 +54,12 @@
     text-shadow: 0 0 10px #00ff00;
     letter-spacing: 2px;
     font-weight: 700;
+}
+
+.footer-column h3::before {
+    content: '▸ ';
+    color: #00ff00;
+    font-size: 1.5rem;
 }
 
 .footer-column ul {
@@ -201,64 +230,70 @@
 </style>
 
 <footer class="isasilab-footer footer-matrix-effect">
+    
+    <!-- Logo IsasiLab -->
+    <div class="footer-logo">
+        <img src="https://raw.githubusercontent.com/IsasiLab/FacturaeManager-Landing/main/assets/IsasiLab3D.jpg" alt="IsasiLab - Diseño 3D, Software y Cloud">
+    </div>
+    
     <div class="footer-content">
         
         <!-- Columna 1: Servicios -->
         <div class="footer-column">
-            <h3>[ SERVICIOS ]</h3>
+            <h3>SERVICIOS</h3>
             <ul>
-                <li><a href="/modelos-3d">Diseño 3D</a></li>
-                <li><a href="/licitabotgi-2">LicitaBotGi</a></li>
-                <li><a href="/facturaemanager">FacturaeManager</a></li>
-                <li><a href="/">Cloud Microsoft 365</a></li>
-                <li><a href="/solicitudes">Automatización IA</a></li>
+                <li><a href="/modelos-3d">🎨 Diseño 3D</a></li>
+                <li><a href="/licitabotgi-2">📋 LicitaBotGi</a></li>
+                <li><a href="/facturaemanager">💼 FacturaeManager</a></li>
+                <li><a href="/">☁️ Cloud Microsoft 365</a></li>
+                <li><a href="/solicitudes">🤖 Automatización IA</a></li>
             </ul>
         </div>
         
         <!-- Columna 2: Recursos -->
         <div class="footer-column">
-            <h3>[ RECURSOS ]</h3>
+            <h3>RECURSOS</h3>
             <ul>
-                <li><a href="/modelos-3d">Descargas Gratuitas</a></li>
-                <li><a href="/modelos-3d">Fototeca Proyectos</a></li>
-                <li><a href="https://github.com/IsasiLab" target="_blank">GitHub</a></li>
-                <li><a href="/solicitudes">Documentación</a></li>
-                <li><a href="/solicitudes">Soporte Técnico</a></li>
+                <li><a href="/modelos-3d">⬇️ Descargas Gratuitas</a></li>
+                <li><a href="/modelos-3d">📸 Fototeca Proyectos</a></li>
+                <li><a href="https://github.com/IsasiLab" target="_blank">💻 GitHub</a></li>
+                <li><a href="/solicitudes">📚 Documentación</a></li>
+                <li><a href="/solicitudes">🔧 Soporte Técnico</a></li>
             </ul>
         </div>
         
         <!-- Columna 3: Información -->
         <div class="footer-column">
-            <h3>[ CONTACTO ]</h3>
+            <h3>CONTACTO</h3>
             <div class="info-item">
-                <strong>> Email:</strong>
+                <strong>📧 Email:</strong>
                 isasiapp2023@gmail.com
             </div>
             <div class="info-item">
-                <strong>> Horario:</strong>
+                <strong>🕐 Horario:</strong>
                 L-V: 9:00 - 18:00 CET
             </div>
             <div class="info-item">
-                <strong>> Ubicación:</strong>
+                <strong>📍 Ubicación:</strong>
                 España
             </div>
             <div class="info-item">
-                <strong>> Respuesta:</strong>
+                <strong>⚡ Respuesta:</strong>
                 24-48 horas
             </div>
         </div>
         
         <!-- Columna 4: Sobre IsasiLab -->
         <div class="footer-column">
-            <h3>[ ISASILAB ]</h3>
+            <h3>ISASILAB</h3>
             <p>
-                Desarrollo de software profesional, diseño 3D personalizado y soluciones cloud 
+                🚀 Desarrollo de software profesional, diseño 3D personalizado y soluciones cloud 
                 para empresas españolas.
             </p>
             <p>
-                <strong>Especialidades:</strong><br>
-                Python • IA Local • Modelado 3D<br>
-                Microsoft 365 • Automatización
+                <strong>🎯 Especialidades:</strong><br>
+                🐍 Python • 🤖 IA Local • 🎲 Modelado 3D<br>
+                ☁️ Microsoft 365 • ⚙️ Automatización
             </p>
             
             <!-- Redes sociales -->
@@ -272,6 +307,9 @@
                 <a href="/solicitudes" class="social-link" title="Contacto">
                     📞
                 </a>
+                <a href="https://github.com/IsasiLab" target="_blank" class="social-link" title="Proyectos">
+                    🎨
+                </a>
             </div>
         </div>
         
@@ -283,15 +321,15 @@
             [ ↑ VOLVER ARRIBA ]
         </a>
         <p class="copyright">
-            © 2026 ISASILAB - Gabriel Isasi
+            © 2026 ISASILAB
         </p>
         <p>
-            > Software profesional a precios justos<br>
-            > Sin suscripciones trampa • Código abierto<br>
-            > Soporte dedicado • Privacidad garantizada
+            ✅ Software profesional a precios justos<br>
+            ✅ Sin suscripciones trampa • Código abierto<br>
+            ✅ Soporte dedicado • Privacidad garantizada
         </p>
         <p style="font-size: 0.8rem; color: #009900; margin-top: 20px;">
-            Made with Python 🐍 & Blender 🎲 | Powered by Matrix 💚
+            🔨 Made with Python 🐍 & Blender 🎲 | 💚 Powered by Matrix
         </p>
     </div>
 </footer>
