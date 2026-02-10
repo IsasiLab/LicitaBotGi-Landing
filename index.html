@@ -235,6 +235,51 @@
             margin-bottom: 10px;
         }
         
+        .screenshots {
+            margin: 60px 0;
+        }
+        
+        .screenshots h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+        }
+        
+        .screenshot-item {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .screenshot-item h3 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        
+        .screenshot-item p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -311,6 +356,57 @@
                 </div>
             </div>
             
+            <div class="screenshots">
+                <h2>📸 Capturas del Sistema</h2>
+                
+                <div class="screenshot-item">
+                    <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOTGI.jpg" alt="Dashboard LicitaBotGi">
+                    <h3>🎯 Dashboard Principal</h3>
+                    <p>
+                        Panel central con vista completa de todas las licitaciones. Importa PDFs desde 
+                        Licitaciones.es, PLACSP o cualquier fuente. Vista de tabla con filtros avanzados 
+                        por estado (Activa, Ganada, Perdida), presupuesto, fechas y códigos CPV. Sistema 
+                        de colores para identificación rápida del estado de cada oportunidad.
+                    </p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT1.jpg" alt="Extracción CPV">
+                    <h3>🔍 Análisis y Extracción CPV</h3>
+                    <p>
+                        Motor de IA que analiza pliegos en formato PDF y extrae automáticamente los códigos 
+                        CPV (Clasificación de Productos y Servicios). Identifica hasta 10 códigos por documento 
+                        con sistema de confianza. Búsqueda inteligente en base de datos oficial de 9.295 códigos 
+                        CPV con descripciones en español. Esencial para preparación de ofertas y estudios de mercado.
+                    </p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT2.jpg" alt="Generación de Propuestas">
+                    <h3>✍️ Generador de Propuestas Técnicas</h3>
+                    <p>
+                        Sistema de generación de propuestas técnicas con IA especializada en contratación pública. 
+                        Analiza pliego técnico, identifica requisitos clave y genera propuesta estructurada según 
+                        criterios SARA (Servicios de Administración Pública). Personalización completa: tono formal/técnico, 
+                        enfoque en experiencia/innovación, longitud ajustable. Exportación a Word y PDF para envío directo.
+                    </p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT3.jpg" alt="Motor de Precios">
+                    <h3>💵 Motor de Cálculo de Precios</h3>
+                    <p>
+                        Sistema profesional de cálculo de ofertas económicas con:<br>
+                        • <strong>Cálculo automático de IVA</strong> (4%, 10%, 21%) según tipo de servicio<br>
+                        • <strong>Márgenes personalizables</strong> desde 5% hasta 100%<br>
+                        • <strong>Detección de umbrales</strong> LCSP (40.000€ menor, 140.000€ tramitación urgente)<br>
+                        • <strong>Vista dual</strong>: Base Imponible + IVA = Total Oferta<br>
+                        • <strong>Recomendaciones inteligentes</strong> según competitividad del sector<br>
+                        • <strong>Historial de ofertas</strong> para análisis de ratios ganados/perdidos
+                    </p>
+                </div>
+            </div>
+            
             <div class="pricing">
                 <h2>💼 Licencia Disponible</h2>
                 <p style="font-size: 1.2em; margin-bottom: 20px;">Software privado - Acceso al código fuente completo</p>
@@ -323,7 +419,7 @@
                         <ul>
                             <li>Código fuente completo</li>
                             <li>Para uso comercial</li>
-                            <li>Actualizaciones 6 meses</li>
+                            <li>Actualizaciones 3 meses</li>
                             <li>Soporte por email</li>
                             <li>Instalador automático</li>
                             <li>Manual completo (700+ líneas)</li>
