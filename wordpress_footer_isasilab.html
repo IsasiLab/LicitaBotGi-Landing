@@ -1,0 +1,297 @@
+<!-- ============================================= -->
+<!-- PIE DE PÁGINA ISASILAB ESTILO MATRIX GREEN -->
+<!-- Footer con enlaces + Info + Redes           -->
+<!-- Autor: IsasiLab                             -->
+<!-- Fecha: Febrero 2026                         -->
+<!-- ============================================= -->
+
+<style>
+.isasilab-footer {
+    background: #000000;
+    border-top: 5px solid #00ff00;
+    padding: 60px 20px 30px;
+    margin-top: 80px;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ff00;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #00cc00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.footer-column ul li a:hover {
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    padding-left: 10px;
+}
+
+.footer-column ul li a::before {
+    content: '> ';
+    color: #00ff00;
+}
+
+.footer-column p {
+    color: #00cc00;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.footer-column .info-item {
+    margin-bottom: 15px;
+    color: #00cc00;
+    font-size: 0.95rem;
+}
+
+.footer-column .info-item strong {
+    color: #00ff00;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    background: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #00ff00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #00ff00;
+    color: #000000;
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.6);
+}
+
+/* Barra inferior */
+.footer-bottom {
+    border-top: 2px solid #00ff00;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #00cc00;
+    font-size: 0.9rem;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.footer-bottom .copyright {
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    font-weight: 700;
+}
+
+/* Botón volver arriba */
+.back-to-top {
+    display: inline-block;
+    background: rgba(0, 10, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    padding: 10px 30px;
+    color: #00ff00;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.back-to-top:hover {
+    background: #00ff00;
+    color: #000000;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.5);
+}
+
+/* Animación Matrix rain (opcional) */
+.footer-matrix-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-matrix-effect::before {
+    content: '01010101 01110011 01100001 01110011 01101001 01101100 01100001 01100010';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 0, 0.1);
+    letter-spacing: 5px;
+    animation: matrixScroll 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes matrixScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+</style>
+
+<footer class="isasilab-footer footer-matrix-effect">
+    <div class="footer-content">
+        
+        <!-- Columna 1: Servicios -->
+        <div class="footer-column">
+            <h3>[ SERVICIOS ]</h3>
+            <ul>
+                <li><a href="/modelos-3d">Diseño 3D</a></li>
+                <li><a href="/licitabotgi-2">LicitaBotGi</a></li>
+                <li><a href="/facturaemanager">FacturaeManager</a></li>
+                <li><a href="/">Cloud Microsoft 365</a></li>
+                <li><a href="/solicitudes">Automatización IA</a></li>
+            </ul>
+        </div>
+        
+        <!-- Columna 2: Recursos -->
+        <div class="footer-column">
+            <h3>[ RECURSOS ]</h3>
+            <ul>
+                <li><a href="/modelos-3d">Descargas Gratuitas</a></li>
+                <li><a href="/modelos-3d">Fototeca Proyectos</a></li>
+                <li><a href="https://github.com/IsasiLab" target="_blank">GitHub</a></li>
+                <li><a href="/solicitudes">Documentación</a></li>
+                <li><a href="/solicitudes">Soporte Técnico</a></li>
+            </ul>
+        </div>
+        
+        <!-- Columna 3: Información -->
+        <div class="footer-column">
+            <h3>[ CONTACTO ]</h3>
+            <div class="info-item">
+                <strong>> Email:</strong>
+                isasiapp2023@gmail.com
+            </div>
+            <div class="info-item">
+                <strong>> Horario:</strong>
+                L-V: 9:00 - 18:00 CET
+            </div>
+            <div class="info-item">
+                <strong>> Ubicación:</strong>
+                España
+            </div>
+            <div class="info-item">
+                <strong>> Respuesta:</strong>
+                24-48 horas
+            </div>
+        </div>
+        
+        <!-- Columna 4: Sobre IsasiLab -->
+        <div class="footer-column">
+            <h3>[ ISASILAB ]</h3>
+            <p>
+                Desarrollo de software profesional, diseño 3D personalizado y soluciones cloud 
+                para empresas españolas.
+            </p>
+            <p>
+                <strong>Especialidades:</strong><br>
+                Python • IA Local • Modelado 3D<br>
+                Microsoft 365 • Automatización
+            </p>
+            
+            <!-- Redes sociales -->
+            <div class="social-links">
+                <a href="https://github.com/IsasiLab" target="_blank" class="social-link" title="GitHub">
+                    💻
+                </a>
+                <a href="mailto:isasiapp2023@gmail.com" class="social-link" title="Email">
+                    📧
+                </a>
+                <a href="/solicitudes" class="social-link" title="Contacto">
+                    📞
+                </a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Barra inferior -->
+    <div class="footer-bottom">
+        <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+            [ ↑ VOLVER ARRIBA ]
+        </a>
+        <p class="copyright">
+            © 2026 ISASILAB - Gabriel Isasi
+        </p>
+        <p>
+            > Software profesional a precios justos<br>
+            > Sin suscripciones trampa • Código abierto<br>
+            > Soporte dedicado • Privacidad garantizada
+        </p>
+        <p style="font-size: 0.8rem; color: #009900; margin-top: 20px;">
+            Made with Python 🐍 & Blender 🎲 | Powered by Matrix 💚
+        </p>
+    </div>
+</footer>

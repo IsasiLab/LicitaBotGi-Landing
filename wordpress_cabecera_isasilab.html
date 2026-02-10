@@ -93,6 +93,7 @@
     transition: all 0.3s ease;
     letter-spacing: 1px;
     font-weight: 600;
+    position: relative;
 }
 
 .menu-item:hover {
@@ -100,6 +101,56 @@
     color: #000000;
     transform: scale(1.05);
     box-shadow: 0 5px 20px rgba(0, 255, 0, 0.5);
+}
+
+/* Dropdown para Software */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-dropdown .menu-item {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 10, 0, 0.95);
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    min-width: 200px;
+    box-shadow: 0 8px 30px rgba(0, 255, 0, 0.4);
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.menu-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: #00ff00;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: #00ff00;
+    color: #000000;
+    padding-left: 30px;
 }
 
 .cabecera-servicios {
@@ -278,8 +329,16 @@
                 <!-- Menú de navegación -->
                 <div class="cabecera-menu">
                     <a href="/" class="menu-item">[ HOME ]</a>
-                    <a href="/licitabotgi-2" class="menu-item">[ LICITABOTGI ]</a>
-                    <a href="/facturaemanager" class="menu-item">[ FACTURAEMANAGER ]</a>
+                    
+                    <!-- Dropdown Software -->
+                    <div class="menu-dropdown">
+                        <span class="menu-item">[ SOFTWARE ▼ ]</span>
+                        <div class="dropdown-content">
+                            <a href="/licitabotgi-2" class="dropdown-item">> LicitaBotGi</a>
+                            <a href="/facturaemanager" class="dropdown-item">> FacturaeManager</a>
+                        </div>
+                    </div>
+                    
                     <a href="/modelos-3d" class="menu-item">[ MODELOS 3D ]</a>
                     <a href="/solicitudes" class="menu-item">[ SOLICITUDES ]</a>
                 </div>
