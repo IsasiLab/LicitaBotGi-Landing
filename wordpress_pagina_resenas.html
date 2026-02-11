@@ -6,13 +6,30 @@
 <!-- ============================================= -->
 
 <style>
+/* Normalización global */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
 /* Estilos base página reseñas - BizBoost */
 .resenas-isasilab {
     background: #0A0C11;
     min-height: 100vh;
     padding: 80px 20px 60px;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+    padding-bottom: max(60px, env(safe-area-inset-bottom));
     font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;
     color: #ffffff;
+}
+
+.resenas-isasilab * {
+    overflow-wrap: anywhere;
 }
 
 .resenas-container {
@@ -28,7 +45,7 @@
 }
 
 .resenas-header h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     color: #ffffff;
     background: linear-gradient(to right, #1b3385 0%, #25c5c9 100%);
     -webkit-background-clip: text;
@@ -37,10 +54,11 @@
     margin-bottom: 20px;
     letter-spacing: 2px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .resenas-header p {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
     color: #cccccc;
     letter-spacing: 1px;
 }
@@ -50,7 +68,7 @@
     background: #222222;
     border: 2px solid #323438;
     border-radius: 15px;
-    padding: 40px;
+    padding: clamp(25px, 5vw, 40px);
     margin-bottom: 60px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     animation: fadeIn 1.2s ease-out;
@@ -63,7 +81,7 @@
 }
 
 .nueva-resena-box h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     color: #ffffff;
     margin-bottom: 30px;
     text-align: center;
@@ -77,7 +95,7 @@
 .form-group label {
     display: block;
     color: #25c5c9;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     margin-bottom: 10px;
     letter-spacing: 1px;
     font-weight: 600;
@@ -92,9 +110,10 @@
     padding: 15px;
     color: #ffffff;
     font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
     transition: all 0.3s ease;
     box-sizing: border-box;
+    min-height: 44px;
 }
 
 .form-group input:focus,
@@ -118,7 +137,7 @@
 .rating-group label {
     display: block;
     color: #25c5c9;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -126,13 +145,18 @@
 .stars {
     display: flex;
     gap: 10px;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .star {
     cursor: pointer;
     color: #323438;
     transition: all 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .star:hover,
@@ -145,8 +169,8 @@
     background: linear-gradient(to right, #1b3385 0%, #25c5c9 100%);
     color: #ffffff;
     border: none;
-    padding: 15px 50px;
-    font-size: 1.2rem;
+    padding: clamp(12px, 2.5vw, 15px) clamp(35px, 6vw, 50px);
+    font-size: clamp(1.05rem, 2.2vw, 1.2rem);
     font-weight: 700;
     font-family: var(--wp--preset--font-family--poppins), 'Poppins', sans-serif;
     border-radius: 10px;
@@ -156,6 +180,12 @@
     display: block;
     margin: 30px auto 0;
     box-shadow: 0 5px 20px rgba(37, 197, 201, 0.3);
+    min-height: 44px;
+}
+
+.btn-enviar:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
 }
 
 .btn-enviar:hover {
@@ -169,7 +199,7 @@
 }
 
 .resenas-titulo {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: #ffffff;
     text-align: center;
     margin-bottom: 40px;
@@ -181,7 +211,7 @@
     background: #222222;
     border: 2px solid #323438;
     border-radius: 15px;
-    padding: 30px;
+    padding: clamp(20px, 4vw, 30px);
     margin-bottom: 30px;
     transition: all 0.3s ease;
 }
@@ -208,7 +238,7 @@
 }
 
 .resena-autor {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     color: #25c5c9;
     font-weight: 700;
     letter-spacing: 1px;
@@ -216,18 +246,18 @@
 
 .resena-estrellas {
     color: #ffd700;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
 }
 
 .resena-fecha {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1.8vw, 0.9rem);
     color: #999999;
     letter-spacing: 1px;
 }
 
 .resena-contenido {
     color: #cccccc;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     line-height: 1.8;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
@@ -261,13 +291,13 @@
 
 .respuesta-autor {
     color: #25c5c9;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-weight: 700;
 }
 
 .respuesta-contenido {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.9vw, 1rem);
     line-height: 1.7;
 }
 
@@ -298,14 +328,23 @@
     background: #222222;
     border: 2px solid #2292b1;
     color: #25c5c9;
-    padding: 12px 30px;
+    padding: clamp(10px, 2vw, 12px) clamp(25px, 4vw, 30px);
     text-decoration: none;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-weight: 600;
     transition: all 0.3s ease;
     margin-bottom: 40px;
     letter-spacing: 1px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-volver:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
 }
 
 .btn-volver:hover {
@@ -346,25 +385,37 @@
 }
 
 .sin-resenas-icono {
-    font-size: 5rem;
+    font-size: clamp(3rem, 6vw, 5rem);
     margin-bottom: 20px;
 }
 
 .sin-resenas-texto {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     color: #cccccc;
     letter-spacing: 2px;
 }
 
 /* Responsive */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @media (max-width: 768px) {
+    .resenas-isasilab {
+        padding: 60px 10px 40px;
+    }
+    
     .resenas-header h1 {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 5vw, 2rem);
         letter-spacing: 1px;
     }
     
     .resenas-header p {
-        font-size: 1rem;
+        font-size: clamp(0.95rem, 2vw, 1rem);
     }
     
     .nueva-resena-box {
@@ -379,6 +430,54 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+    
+    .btn-enviar,
+    .btn-volver {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .resenas-isasilab {
+        padding: 50px 8px 30px;
+    }
+    
+    .resenas-header h1 {
+        font-size: clamp(1.5rem, 4.5vw, 1.8rem);
+        letter-spacing: 0.5px;
+    }
+    
+    .resenas-header p {
+        font-size: clamp(0.9rem, 1.8vw, 1rem);
+    }
+    
+    .nueva-resena-box h2,
+    .resenas-titulo {
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+    }
+    
+    .nueva-resena-box {
+        padding: 20px 15px;
+    }
+    
+    .resena-item {
+        padding: 18px 12px;
+    }
+    
+    .stars {
+        font-size: clamp(1.8rem, 3.5vw, 2rem);
+        gap: 8px;
+    }
+    
+    .star {
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    .respuesta-isasilab {
+        padding: 15px;
     }
 }
 </style>

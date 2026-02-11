@@ -6,13 +6,23 @@
 <!-- ============================================= -->
 
 <style>
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .isasilab-cabecera {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
     background: #000000;
     padding: 0;
-    margin: 0 auto;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    margin: 0;
+    width: 100%;
     max-width: 100%;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
     border-bottom: 5px solid #00ff00;
     box-shadow: 0 10px 50px rgba(0, 255, 0, 0.3);
 }
@@ -38,12 +48,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
 }
 
 .cabecera-content {
     text-align: center;
-    max-width: 1200px;
-    padding: 20px;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 10px;
     animation: glitchIn 1.5s ease-out;
 }
 
@@ -95,6 +107,15 @@
     letter-spacing: 1px;
     font-weight: 600;
     position: relative;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item:focus-visible {
+    outline: 3px solid #00ff00;
+    outline-offset: 3px;
 }
 
 .menu-item:hover {
@@ -102,6 +123,91 @@
     color: #000000;
     transform: scale(1.05);
     box-shadow: 0 5px 20px rgba(0, 255, 0, 0.5);
+}
+
+/* Icono Reseñas con Tooltip */
+.resenas-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.resenas-icon {
+    font-size: 1.8rem;
+    color: #00ff00;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    filter: drop-shadow(0 0 5px #00ff00);
+    animation: starPulse 2s infinite;
+}
+
+.resenas-icon:hover {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 15px #00ff00);
+}
+
+.resenas-icon:focus-visible {
+    outline: 3px solid #00ff00;
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+/* Tooltip */
+.resenas-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 255, 0, 0.95);
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.5);
+    z-index: 10001;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.resenas-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 255, 0, 0.95);
+}
+
+.resenas-icon-wrapper:hover .resenas-tooltip,
+.resenas-icon-wrapper.active .resenas-tooltip {
+    visibility: visible;
+    opacity: 1;
+    bottom: 130%;
+}
+
+/* Animación estrella */
+@keyframes starPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px #00ff00);
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 15px #00ff00) drop-shadow(0 0 20px #00ff00);
+        transform: scale(1.1);
+    }
 }
 
 /* Dropdown para Software */
@@ -124,29 +230,9 @@
     border: 2px solid #00ff00;
     border-radius: 5px;
     min-width: 220px;
-    max-height: 250px;
-    overflow-y: auto;
     box-shadow: 0 8px 30px rgba(0, 255, 0, 0.4);
-    z-index: 9999;
+    z-index: 10000;
     margin-top: 5px;
-}
-
-.dropdown-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.dropdown-content::-webkit-scrollbar-track {
-    background: rgba(0, 50, 0, 0.3);
-    border-radius: 5px;
-}
-
-.dropdown-content::-webkit-scrollbar-thumb {
-    background: #00ff00;
-    border-radius: 5px;
-}
-
-.dropdown-content::-webkit-scrollbar-thumb:hover {
-    background: #00cc00;
 }
 
 .menu-dropdown.active .dropdown-content {
@@ -163,6 +249,14 @@
     transition: all 0.3s ease;
     letter-spacing: 1px;
     border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:focus-visible {
+    outline: 2px solid #00ff00;
+    outline-offset: -2px;
 }
 
 .dropdown-item:last-child {
@@ -296,6 +390,14 @@
 }
 
 /* Responsive */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .cabecera-servicios {
         grid-template-columns: 1fr;
@@ -308,27 +410,103 @@
 }
 
 @media (max-width: 768px) {
+    .cabecera-content {
+        padding: 10px 8px;
+    }
+    
     .cabecera-bg {
-        height: 250px;
+        height: 240px;
     }
     
     .cabecera-logo {
-        font-size: 2rem;
-        letter-spacing: 3px;
+        font-size: 2.8rem;
+        letter-spacing: 4px;
+        margin-bottom: 12px;
+        font-weight: 900;
     }
     
     .cabecera-tagline {
-        font-size: 1rem;
-        letter-spacing: 1px;
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+        line-height: 1.3;
     }
     
     .cabecera-menu {
-        gap: 5px;
+        gap: 3px;
+        margin-bottom: 15px;
     }
     
     .menu-item {
-        padding: 8px 15px;
+        padding: 6px 7px;
+        font-size: 0.62rem;
+        min-height: 44px;
+        letter-spacing: 0.3px;
+    }
+    
+    .resenas-icon-wrapper {
+        margin-left: 5px;
+    }
+    
+    .resenas-icon {
+        font-size: 1.5rem;
+        min-width: 40px;
+        min-height: 40px;
+    }
+    
+    .resenas-tooltip {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        white-space: normal;
+        max-width: 150px;
+        text-align: center;
+    }
+    
+    .dropdown-content {
+        min-width: 180px;
+        max-width: 300px;
+        width: max-content;
+        left: 0;
+        transform: none;
+    }
+    
+    .dropdown-item {
+        padding: 10px 15px;
         font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecera-bg {
+        height: 220px;
+    }
+    
+    .cabecera-logo {
+        font-size: 2.4rem;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+    
+    .cabecera-tagline {
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .cabecera-menu {
+        gap: 2px;
+    }
+    
+    .menu-item {
+        padding: 6px 5px;
+        font-size: 0.58rem;
+    }
+    
+    .resenas-icon {
+        font-size: 1.3rem;
+        min-width: 38px;
+        min-height: 38px;
     }
 }
 </style>
@@ -353,38 +531,47 @@
                     <a href="/" class="menu-item">[ HOME ]</a>
                     
                     <!-- Dropdown Software -->
-                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)">
-                        <span class="menu-item">[ SOFTWARE ▼ ]</span>
-                        <div class="dropdown-content">
-                            <a href="/licitabotgi-2" class="dropdown-item">📋 LicitaBotGi</a>
-                            <a href="/facturaemanager" class="dropdown-item">💼 FacturaeManager</a>
+                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)" role="navigation" aria-label="Menú Software">
+                        <span class="menu-item" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-software" aria-haspopup="true">[ SOFTWARE ▼ ]</span>
+                        <div class="dropdown-content" id="dropdown-software" role="menu">
+                            <a href="/licitabotgi-2" class="dropdown-item" role="menuitem">📋 LicitaBotGi</a>
+                            <a href="/facturaemanager" class="dropdown-item" role="menuitem">💼 FacturaeManager</a>
+                            <a href="/mantenimientolab3d" class="dropdown-item" role="menuitem">📊 MantenimientoLab3D</a>
                         </div>
                     </div>
                     
                     <!-- Dropdown Diseño 3D -->
-                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)">
-                        <span class="menu-item">[ DISEÑO 3D ▼ ]</span>
-                        <div class="dropdown-content">
-                            <a href="/modelos-3d" class="dropdown-item">🎨 Modelos 3D</a>
-                            <a href="/modelos-3d" class="dropdown-item">🖨️ Impresión 3D</a>
-                            <a href="/modelos-3d" class="dropdown-item">📸 Litofanías</a>
-                            <a href="/modelos-3d" class="dropdown-item">🏥 DICOM Médico</a>
+                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)" role="navigation" aria-label="Menú Diseño 3D">
+                        <span class="menu-item" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-diseno" aria-haspopup="true">[ DISEÑO 3D ▼ ]</span>
+                        <div class="dropdown-content" id="dropdown-diseno" role="menu">
+                            <a href="/modelos-3d" class="dropdown-item" role="menuitem">🎨 Modelos 3D</a>
+                            <a href="/modelos-3d" class="dropdown-item" role="menuitem">🖨️ Impresión 3D</a>
+                            <a href="/modelos-3d" class="dropdown-item" role="menuitem">📸 Litofanías</a>
+                            <a href="/modelos-3d" class="dropdown-item" role="menuitem">🏭 DICOM Médico</a>
                         </div>
                     </div>
                     
                     <!-- Dropdown Cloud -->
-                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)">
-                        <span class="menu-item">[ CLOUD ▼ ]</span>
-                        <div class="dropdown-content">
-                            <a href="/solicitudes" class="dropdown-item">☁️ Microsoft 365</a>
-                            <a href="/solicitudes" class="dropdown-item">👥 Teams + SharePoint</a>
-                            <a href="/solicitudes" class="dropdown-item">⚡ Power Automate</a>
-                            <a href="/solicitudes" class="dropdown-item">📊 Power BI</a>
-                            <a href="/solicitudes" class="dropdown-item">🔄 Migración Cloud</a>
+                    <div class="menu-dropdown" onclick="toggleDropdown(event, this)" role="navigation" aria-label="Menú Cloud">
+                        <span class="menu-item" role="button" tabindex="0" aria-expanded="false" aria-controls="dropdown-cloud" aria-haspopup="true">[ CLOUD ▼ ]</span>
+                        <div class="dropdown-content" id="dropdown-cloud" role="menu">
+                            <a href="/solicitudes" class="dropdown-item" role="menuitem">☁️ Microsoft 365</a>
+                            <a href="/solicitudes" class="dropdown-item" role="menuitem">👥 Teams + SharePoint</a>
+                            <a href="/solicitudes" class="dropdown-item" role="menuitem">⚡ Power Automate</a>
+                            <a href="/solicitudes" class="dropdown-item" role="menuitem">📊 Power BI</a>
+                            <a href="/solicitudes" class="dropdown-item" role="menuitem">🔄 Migración Cloud</a>
                         </div>
                     </div>
                     
                     <a href="/solicitudes" class="menu-item">[ SOLICITUDES ]</a>
+                    
+                    <!-- Icono Reseñas -->
+                    <div class="resenas-icon-wrapper" onclick="toggleTooltip(event, this)">
+                        <a href="/resenas" class="resenas-icon" aria-label="Ver reseñas de clientes" title="Reseñas">⭐</a>
+                        <div class="resenas-tooltip" role="tooltip">
+                            VER RESEÑAS
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Servicios (ocultos ahora) -->
@@ -437,20 +624,28 @@
 </div>
 
 <script>
-// Función mejorada para toggle dropdown
+// Función mejorada para toggle dropdown con ARIA
 function toggleDropdown(event, element) {
     event.stopPropagation();
+    
+    const button = element.querySelector('[role="button"]');
+    const isActive = element.classList.contains('active');
     
     // Cerrar otros dropdowns
     const allDropdowns = document.querySelectorAll('.menu-dropdown');
     allDropdowns.forEach(dropdown => {
         if (dropdown !== element) {
             dropdown.classList.remove('active');
+            const btn = dropdown.querySelector('[role="button"]');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
         }
     });
     
     // Toggle actual
     element.classList.toggle('active');
+    if (button) {
+        button.setAttribute('aria-expanded', !isActive ? 'true' : 'false');
+    }
 }
 
 // Cerrar dropdown si se hace click fuera
@@ -459,6 +654,62 @@ document.addEventListener('click', function(event) {
     dropdowns.forEach(dropdown => {
         if (!dropdown.contains(event.target)) {
             dropdown.classList.remove('active');
+            const btn = dropdown.querySelector('[role="button"]');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
+// Toggle tooltip en móviles
+function toggleTooltip(event, element) {
+    event.stopPropagation();
+    
+    const wasActive = element.classList.contains('active');
+    
+    // Cerrar otros tooltips
+    document.querySelectorAll('.resenas-icon-wrapper.active').forEach(wrapper => {
+        if (wrapper !== element) {
+            wrapper.classList.remove('active');
+        }
+    });
+    
+    // Toggle actual
+    element.classList.toggle('active');
+    
+    // Si se activó, cerrar automáticamente después de 3 segundos
+    if (!wasActive) {
+        setTimeout(() => {
+            element.classList.remove('active');
+        }, 3000);
+    }
+}
+
+// Soporte teclado: Escape cierra menús y tooltips
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const dropdowns = document.querySelectorAll('.menu-dropdown.active');
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+            const btn = dropdown.querySelector('[role="button"]');
+            if (btn) {
+                btn.setAttribute('aria-expanded', 'false');
+                btn.focus();
+            }
+        });
+        
+        // Cerrar tooltips también
+        document.querySelectorAll('.resenas-icon-wrapper.active').forEach(wrapper => {
+            wrapper.classList.remove('active');
+        });
+    }
+});
+
+// Enter/Space activa dropdown
+document.querySelectorAll('.menu-dropdown [role="button"]').forEach(button => {
+    button.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            this.parentElement.click();
         }
     });
 });

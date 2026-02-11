@@ -23,7 +23,73 @@ O para añadir a página existente:
 ==============================================
 -->
 
-<div class="wp-block-group alignfull" style="margin: clamp(42px, 7.5vw, 140px) 0; padding: clamp(60px, 8vw, 100px) 20px; background: #0A0C11;">
+<style>
+/* Normalización global */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Responsive enhancements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Touch targets y responsive móvil */
+.contacto-isasilab input,
+.contacto-isasilab select,
+.contacto-isasilab textarea,
+.contacto-isasilab button {
+    min-height: 44px;
+}
+
+@media (max-width: 768px) {
+    .contacto-isasilab h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+    }
+    
+    .contacto-isasilab h3 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem) !important;
+    }
+    
+    .contacto-isasilab button[type="submit"] {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 30px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacto-isasilab h2 {
+        font-size: clamp(1.5rem, 4.5vw, 2rem) !important;
+        line-height: 1.2 !important;
+    }
+    
+    .contacto-isasilab h3 {
+        font-size: clamp(1.1rem, 2.8vw, 1.3rem) !important;
+    }
+    
+    .contacto-isasilab label {
+        font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    }
+    
+    .contacto-isasilab input,
+    .contacto-isasilab select,
+    .contacto-isasilab textarea {
+        font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    }
+}
+</style>
+
+<div class="wp-block-group alignfull contacto-isasilab" style="margin: clamp(42px, 7.5vw, 140px) 0; padding: clamp(60px, 8vw, 100px) max(20px, env(safe-area-inset-left)) max(60px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-right)); background: #0A0C11;">
     <div style="max-width: 800px; margin: 0 auto;">
         
         <!-- TÍTULO -->
@@ -185,6 +251,7 @@ O para añadir a página existente:
                             <option value="">-- Selecciona --</option>
                             <option value="LicitaBotGi">🚀 LicitaBotGi (Licitaciones con IA)</option>
                             <option value="FacturaeManager">🧾 FacturaeManager (Facturación Electrónica)</option>
+                            <option value="MantenimientoLab3D">🔧 MantenimientoLab3D (Gestión de Costes 3D)</option>
                             <option value="Desarrollo personalizado">💡 Desarrollo de software personalizado</option>
                             <option value="Consultoría">📊 Consultoría / Asesoramiento</option>
                             <option value="Otro">📦 Otro</option>
