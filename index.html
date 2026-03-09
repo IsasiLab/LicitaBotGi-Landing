@@ -3,26 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LicitaBotGi - Software de Gestión de Licitaciones con IA | 25€</title>
-    <meta name="description" content="Software profesional para automatizar el análisis y gestión de licitaciones públicas en España. Extracción automática de requisitos, generación de propuestas con IA local. Licencia 25€.">
+    <title>LicitaBotGi V2 - Sistema Inteligente de Licitaciones con IA | 25€</title>
+    <meta name="description" content="LicitaBotGi V2: automatiza licitaciones con IA local. Analisis post-adjudicacion, planners, exportacion a Excel y propuestas en Word. Licencia 25€.">
     <meta name="keywords" content="software licitaciones, gestión licitaciones públicas, análisis licitaciones España, contratación pública, IA licitaciones, automatización empresarial, CPV extracción, propuestas automáticas, ollama, python">
     <meta name="author" content="IsasiLab">
-    <meta property="og:title" content="LicitaBotGi - Sistema Inteligente de Gestión de Licitaciones">
-    <meta property="og:description" content="Automatiza el análisis de licitaciones en minutos con IA local. Software profesional para empresas españolas - 25€">
+    <meta property="og:title" content="LicitaBotGi V2 - Sistema Inteligente de Licitaciones">
+    <meta property="og:description" content="V2 con analisis post-adjudicacion, planners y exportacion a Excel. IA local 100% privada - 25€">
     <meta property="og:url" content="https://isasilab.github.io/LicitaBotGi-Landing/">
     <meta property="og:type" content="website">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --ink: #0f172a;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --card: #f8fafc;
+            --accent: #f59e0b;
+            --accent-2: #0f766e;
+            --accent-3: #16a34a;
+            --bg-1: #0b1220;
+            --bg-2: #114b5f;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Space Grotesk', 'Source Sans 3', 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text);
+            background: radial-gradient(1200px 500px at 10% -10%, rgba(245, 158, 11, 0.25), transparent 60%),
+                        radial-gradient(900px 600px at 90% 10%, rgba(15, 118, 110, 0.25), transparent 55%),
+                        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
         }
         
         .container {
@@ -40,7 +55,7 @@
         h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
         }
         
         .tagline {
@@ -66,19 +81,19 @@
         
         .feature {
             padding: 25px;
-            background: #f8f9fa;
+            background: var(--card);
             border-radius: 12px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid var(--accent-2);
         }
         
         .feature h3 {
-            color: #667eea;
+            color: var(--accent-2);
             margin-bottom: 10px;
             font-size: 1.3em;
         }
         
         .pricing {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%);
             color: white;
             padding: 50px;
             border-radius: 15px;
@@ -113,14 +128,14 @@
         
         .plan h3 {
             font-size: 1.8em;
-            color: #667eea;
+            color: var(--accent-2);
             margin-bottom: 15px;
         }
         
         .price {
             font-size: 3em;
             font-weight: bold;
-            color: #764ba2;
+            color: var(--accent-2);
             margin: 20px 0;
         }
         
@@ -137,14 +152,14 @@
         
         .plan li:before {
             content: "✓ ";
-            color: #059669;
+            color: var(--accent-3);
             font-weight: bold;
             margin-right: 8px;
         }
         
         .cta-button {
             display: inline-block;
-            background: #059669;
+            background: var(--accent-3);
             color: white;
             padding: 15px 40px;
             border-radius: 50px;
@@ -153,17 +168,17 @@
             font-weight: bold;
             margin-top: 20px;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4);
         }
         
         .cta-button:hover {
-            background: #047857;
+            background: #15803d;
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.6);
+            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.6);
         }
         
         .tech-stack {
-            background: #f8f9fa;
+            background: var(--card);
             padding: 40px;
             border-radius: 15px;
             margin: 40px 0;
@@ -171,7 +186,7 @@
         
         .tech-stack h2 {
             text-align: center;
-            color: #667eea;
+            color: var(--accent-2);
             margin-bottom: 30px;
         }
         
@@ -188,19 +203,19 @@
             border-radius: 25px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             font-weight: 600;
-            color: #667eea;
+            color: var(--accent-2);
         }
         
         .contact {
             text-align: center;
             padding: 50px 20px;
-            background: #f8f9fa;
+            background: var(--card);
             border-radius: 15px;
             margin-top: 40px;
         }
         
         .contact h2 {
-            color: #667eea;
+            color: var(--accent-2);
             margin-bottom: 20px;
         }
         
@@ -216,22 +231,22 @@
         }
         
         .faq h2 {
-            color: #667eea;
+            color: var(--accent-2);
             text-align: center;
             margin-bottom: 30px;
             font-size: 2em;
         }
         
         .faq-item {
-            background: #f8f9fa;
+            background: var(--card);
             padding: 20px;
             margin: 15px 0;
             border-radius: 10px;
-            border-left: 4px solid #764ba2;
+            border-left: 4px solid var(--accent);
         }
         
         .faq-item h4 {
-            color: #667eea;
+            color: var(--accent-2);
             margin-bottom: 10px;
         }
         
@@ -240,14 +255,14 @@
         }
         
         .screenshots h2 {
-            color: #667eea;
+            color: var(--accent-2);
             text-align: center;
             margin-bottom: 40px;
             font-size: 2.2em;
         }
         
         .screenshot-item {
-            background: #f8f9fa;
+            background: var(--card);
             padding: 30px;
             margin: 40px 0;
             border-radius: 15px;
@@ -257,7 +272,7 @@
         
         .screenshot-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 40px rgba(15, 118, 110, 0.3);
         }
         
         .screenshot-item img {
@@ -269,13 +284,13 @@
         }
         
         .screenshot-item h3 {
-            color: #667eea;
+            color: var(--accent-2);
             font-size: 1.6em;
             margin-bottom: 15px;
         }
         
         .screenshot-item p {
-            color: #666;
+            color: var(--muted);
             line-height: 1.8;
             font-size: 1.05em;
         }
@@ -298,49 +313,49 @@
 <body>
     <header>
         <div class="container">
-            <h1>🚀 LicitaBotGi</h1>
-            <p class="tagline">Sistema Inteligente de Gestión de Licitaciones con IA</p>
+            <h1>🚀 LicitaBotGi V2</h1>
+            <p class="tagline">Sistema Inteligente de Licitaciones con IA Local</p>
         </div>
     </header>
     
     <div class="container">
         <div class="main-content">
             <h2 style="text-align: center; color: #667eea; font-size: 2.2em; margin-bottom: 20px;">
-                Automatiza el análisis de licitaciones en minutos
+                Automatiza licitaciones en minutos con LicitaBotGi V2
             </h2>
             <p style="text-align: center; font-size: 1.2em; color: #666; margin-bottom: 50px;">
-                Software profesional para empresas españolas que participan en contratación pública
+                Flujos completos: analisis, propuesta, precio, post-adjudicacion y reporting
             </p>
             
             <div class="features">
                 <div class="feature">
-                    <h3>🤖 Análisis con IA</h3>
-                    <p>Extracción automática de CPVs, presupuestos, requisitos técnicos y criterios de adjudicación desde PDFs.</p>
+                    <h3>🤖 Analisis IA Local</h3>
+                    <p>Extrae CPVs, presupuestos, requisitos y criterios desde PDFs con IA local. Sin APIs externas.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3>📝 Generación Automática</h3>
-                    <p>Crea propuestas profesionales en Word basadas en el análisis inteligente del pliego.</p>
+                    <h3>📝 Propuestas y Documentacion</h3>
+                    <p>Genera propuestas en Word, checklist y plan documental desde el analisis del pliego.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3>🔒 100% Privado</h3>
-                    <p>IA local con Ollama. Tus datos nunca salen de tu ordenador. Sin APIs externas ni suscripciones.</p>
+                    <h3>📊 Post-adjudicacion</h3>
+                    <p>Analisis de lotes, competidores y resultados con historial de mejoras y lecciones.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3>💰 Motor de Precios</h3>
-                    <p>Calcula precios óptimos y simula puntuaciones para maximizar tus posibilidades de adjudicación.</p>
+                    <h3>💰 Planner Economico</h3>
+                    <p>Calculo de precios, margen, IVA y exportacion a Excel con comparativas.</p>
                 </div>
                 
                 <div class="feature">
                     <h3>✅ Control de Calidad</h3>
-                    <p>Checklist dinámico y validador pre-envío para evitar errores costosos.</p>
+                    <p>Checklist dinamico, validador pre-envio y control de estado por licitacion.</p>
                 </div>
                 
                 <div class="feature">
-                    <h3>📊 Dashboard Completo</h3>
-                    <p>KPIs en tiempo real, histórico de licitaciones y análisis de competencia.</p>
+                    <h3>📈 Dashboard y KPIs</h3>
+                    <p>KPIs, historico y filtros avanzados por estado, organismo y fechas.</p>
                 </div>
             </div>
             
@@ -348,10 +363,10 @@
                 <h2>🛠️ Tecnología</h2>
                 <div class="badges">
                     <span class="badge">Python 3.11+</span>
+                    <span class="badge">CustomTkinter UI</span>
                     <span class="badge">IA Local (Ollama)</span>
-                    <span class="badge">Interfaz Gráfica Moderna</span>
-                    <span class="badge">Base de Datos SQLite</span>
-                    <span class="badge">Procesamiento PDF/Word</span>
+                    <span class="badge">SQLite + Backups</span>
+                    <span class="badge">PDF/Word/Excel</span>
                     <span class="badge">Windows 10/11</span>
                 </div>
             </div>
@@ -361,59 +376,52 @@
                 
                 <div class="screenshot-item">
                     <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOTGI.jpg" alt="Dashboard LicitaBotGi">
-                    <h3>🎯 Dashboard Principal</h3>
+                    <h3>🎯 Dashboard Principal V2</h3>
                     <p>
-                        Panel central con vista completa de todas las licitaciones. Importa PDFs desde 
-                        Licitaciones.es, PLACSP o cualquier fuente. Vista de tabla con filtros avanzados 
-                        por estado (Activa, Ganada, Perdida), presupuesto, fechas y códigos CPV. Sistema 
-                        de colores para identificación rápida del estado de cada oportunidad.
+                        Vista completa de licitaciones con KPIs, filtros por estado, organismo y fechas.
+                        Importa PDFs desde PLACSP, Licitaciones.es o cualquier fuente y sigue el flujo end-to-end.
                     </p>
                 </div>
                 
                 <div class="screenshot-item">
                     <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT1.jpg" alt="Extracción CPV">
-                    <h3>🔍 Análisis y Extracción CPV</h3>
+                    <h3>🔍 Analisis y Extraccion CPV</h3>
                     <p>
-                        Motor de IA que analiza pliegos en formato PDF y extrae automáticamente los códigos 
-                        CPV (Clasificación de Productos y Servicios). Identifica hasta 10 códigos por documento 
-                        con sistema de confianza. Búsqueda inteligente en base de datos oficial de 9.295 códigos 
-                        CPV con descripciones en español. Esencial para preparación de ofertas y estudios de mercado.
+                        Motor de IA que analiza pliegos en PDF y extrae codigos CPV, presupuestos y requisitos.
+                        Incluye busqueda inteligente en base de datos oficial con descripciones en espanol.
                     </p>
                 </div>
                 
                 <div class="screenshot-item">
                     <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT2.jpg" alt="Generación de Propuestas">
-                    <h3>✍️ Generador de Propuestas Técnicas</h3>
+                    <h3>✍️ Generador de Propuestas</h3>
                     <p>
-                        Sistema de generación de propuestas técnicas con IA especializada en contratación pública. 
-                        Analiza pliego técnico, identifica requisitos clave y genera propuesta estructurada según 
-                        criterios SARA (Servicios de Administración Pública). Personalización completa: tono formal/técnico, 
-                        enfoque en experiencia/innovación, longitud ajustable. Exportación a Word y PDF para envío directo.
+                        Generacion de propuestas tecnicas con IA especializada. Plantillas y exportacion a Word
+                        para envio directo, con checklist y plan documental.
                     </p>
                 </div>
                 
                 <div class="screenshot-item">
                     <img src="https://raw.githubusercontent.com/IsasiLab/LicitaBotGi-Landing/main/assets/screenshots/LICITABOT3.jpg" alt="Motor de Precios">
-                    <h3>💵 Motor de Cálculo de Precios</h3>
+                    <h3>💵 Planner Economico V2</h3>
                     <p>
-                        Sistema profesional de cálculo de ofertas económicas con:<br>
-                        • <strong>Cálculo automático de IVA</strong> (4%, 10%, 21%) según tipo de servicio<br>
-                        • <strong>Márgenes personalizables</strong> desde 5% hasta 100%<br>
-                        • <strong>Detección de umbrales</strong> LCSP (40.000€ menor, 140.000€ tramitación urgente)<br>
-                        • <strong>Vista dual</strong>: Base Imponible + IVA = Total Oferta<br>
-                        • <strong>Recomendaciones inteligentes</strong> según competitividad del sector<br>
-                        • <strong>Historial de ofertas</strong> para análisis de ratios ganados/perdidos
+                        Sistema profesional de precios con:<br>
+                        • <strong>Calculo automatico de IVA</strong> (4%, 10%, 21%)<br>
+                        • <strong>Margenes personalizables</strong> y simulaciones<br>
+                        • <strong>Deteccion de umbrales</strong> LCSP<br>
+                        • <strong>Vista dual</strong>: Base + IVA = Total Oferta<br>
+                        • <strong>Exportacion a Excel</strong> con historico
                     </p>
                 </div>
             </div>
             
             <div class="pricing">
-                <h2>💼 Licencia Disponible</h2>
+                <h2>💼 Licencia V2 Disponible</h2>
                 <p style="font-size: 1.2em; margin-bottom: 20px;">Software privado - Acceso al código fuente completo</p>
                 
                 <div class="plans" style="justify-content: center;">
                     <div class="plan" style="border: 3px solid #764ba2; max-width: 400px;">
-                        <h3>💼 Licencia Individual</h3>
+                        <h3>💼 Licencia Individual V2</h3>
                         <div class="price">25€</div>
                         <p style="color: #666; margin-bottom: 20px;">Pago único - Sin suscripciones</p>
                         <ul>
@@ -422,7 +430,7 @@
                             <li>Actualizaciones 3 meses</li>
                             <li>Soporte por email</li>
                             <li>Instalador automático</li>
-                            <li>Manual completo (700+ líneas)</li>
+                            <li>Manual completo y guias rapidas</li>
                             <li>IA local (sin costes recurrentes)</li>
                         </ul>
                         <a href="#contacto" class="cta-button">Solicitar Licencia</a>
@@ -442,8 +450,8 @@
                 <h2>❓ Preguntas Frecuentes</h2>
                 
                 <div class="faq-item">
-                    <h4>¿Necesito conocimientos de programación?</h4>
-                    <p>No. Incluye instalador automático y interfaz gráfica completa. Solo ejecutas un .bat y ya está listo para usar.</p>
+                    <h4>¿Que novedades incluye V2?</h4>
+                    <p>Analisis post-adjudicacion, planners economico y documental, exportacion a Excel y mejoras de flujo.</p>
                 </div>
                 
                 <div class="faq-item">
@@ -462,8 +470,8 @@
                 </div>
                 
                 <div class="faq-item">
-                    <h4>¿Hay versión de prueba?</h4>
-                    <p>No hay demo pública por ser código privado. Puedo mostrarte screenshots o video. Contacta para más información.</p>
+                    <h4>¿Hay version de prueba?</h4>
+                    <p>No hay demo publica por ser codigo privado. Puedo mostrarte screenshots o video. Contacta para mas informacion.</p>
                 </div>
                 
                 <div class="faq-item">
@@ -478,8 +486,9 @@
                     ¿Interesado en obtener una licencia?
                 </p>
                 <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">
-                    🌐 <strong>Web:</strong> <a href="https://www.isasilab3d.com" style="color: #667eea; text-decoration: none; font-weight: bold;">www.isasilab3d.com</a><br>
-                    📧 Contacto a través de la web o por GitHub
+                    🌐 <strong>Web:</strong> <a href="https://www.isasilab3d.com" style="color: #0f766e; text-decoration: none; font-weight: bold;">www.isasilab3d.com</a><br>
+                    🛒 <strong>Solicitudes:</strong> <a href="https://www.isasilab3d.com/solicitudes" style="color: #0f766e; text-decoration: none; font-weight: bold;">isasilab3d.com/solicitudes</a><br>
+                    📧 Contacto a traves de la web o por GitHub
                 </p>
                 <p style="margin-top: 30px; color: #666;">
                     <strong>Proceso simple:</strong><br>

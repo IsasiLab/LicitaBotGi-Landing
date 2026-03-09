@@ -1,10 +1,10 @@
-# 🤖 LicitaBotGi - Landing Page
+# 🤖 LicitaBotGi V2 - Landing Page
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Activo-brightgreen?style=flat-square&logo=github)](https://isasilab.github.io/LicitaBotGi-Landing/)
 [![Website](https://img.shields.io/badge/Web-isasilab3d.com-blue?style=flat-square&logo=google-chrome)](https://www.isasilab3d.com/licitabotgi-2)
 [![License](https://img.shields.io/badge/License-Comercial-orange?style=flat-square)](LICENSE)
 
-Landing page comercial para **LicitaBotGi**, sistema inteligente de gestión de licitaciones con IA.
+Landing page comercial para **LicitaBotGi V2**, sistema inteligente de licitaciones con IA local.
 
 🌐 **GitHub Pages:** https://isasilab.github.io/LicitaBotGi-Landing/  
 🌐 **Web Oficial:** https://www.isasilab3d.com/licitabotgi-2  
@@ -12,16 +12,16 @@ Landing page comercial para **LicitaBotGi**, sistema inteligente de gestión de 
 
 ---
 
-## 🚀 Sobre LicitaBotGi
+## 🚀 Sobre LicitaBotGi V2
 
 Software profesional para empresas españolas que participan en contratación pública.
 
-**Características Principales:**
-- 🤖 Análisis automático de PDFs con IA local
-- 📝 Generación de propuestas técnicas inteligentes
-- 🔒 100% privado - IA local Phi-3.5-mini
-- 💰 Motor de cálculo de precios optimizado
-- 📊 Base de datos con 9.295 códigos CPV
+**Caracteristicas Principales:**
+- 🤖 Analisis automatico de PDFs con IA local
+- 📝 Propuestas en Word y plan documental
+- 📊 Analisis post-adjudicacion con lotes y competidores
+- 💰 Planner economico con exportacion a Excel
+- 🔒 100% privado - IA local sin APIs externas
 
 ## Capturas de Pantalla
 
@@ -41,7 +41,7 @@ Interfaz completa del sistema:
 
 ## Licencias
 
-- **Licencia Individual**: 25€ (pago único)
+- **Licencia Individual V2**: 25€ (pago unico)
 
 Acceso completo al código fuente en repositorio privado de GitHub.
 
